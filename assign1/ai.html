@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AI Room — Harshitha Seetharaman</title>
+
+    <meta name="author" content="Harshitha Seetharaman" />
+    <meta
+      name="description"
+      content="An AI-generated page: a short reflection about Harshitha, drafted with a generative-AI model and curated by hand. Click to compose a new version."
+    />
+    <meta name="theme-color" content="#1e3d32" />
+    <meta property="og:title" content="AI Room — Harshitha Seetharaman" />
+    <meta
+      property="og:description"
+      content="A page written with a little help from AI."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="./images/avatar.jpg" />
+
+    <link rel="icon" type="image/svg+xml" href="./images/favicon.svg" />
+    <link rel="apple-touch-icon" href="./images/avatar.jpg" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/styles.css" />
+    <script type="module" src="./js/ai.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+      <div class="container nav">
+        <a class="brand" href="./index.html">
+          <span class="brand-mark" aria-hidden="true">HS</span>
+          <span>Harshitha Seetharaman</span>
+        </a>
+        <nav aria-label="Primary">
+          <ul class="nav-links">
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./about.html">About</a></li>
+            <li><a href="./ai.html">AI Room</a></li>
+            <li><a href="./index.html#projects">Projects</a></li>
+            <li><a href="./index.html#contact">Contact</a></li>
+          </ul>
+        </nav>
+        <button type="button" class="theme-toggle" aria-label="Toggle colour theme">
+          <span aria-hidden="true">◐</span>
+          <span class="theme-label">Dark</span>
+        </button>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="page-hero">
+        <div class="container">
+          <p class="eyebrow">AI-generated page</p>
+          <h1>Written with a little help from AI.</h1>
+          <p class="lede">
+            This page was drafted using a generative-AI model, then curated by me. It
+            takes my own tagline —
+            <em>"I work with data until it starts making sense"</em> — and turns it into a
+            tiny, ever-changing reflection. The exact model, version, and prompts are
+            documented in the project README.
+          </p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="card reveal callout">
+            <p class="section-kicker">A machine-made verse about me</p>
+            <p class="poem">Composing…</p>
+            <div class="hero-cta">
+              <button type="button" class="btn btn-primary generate-btn">
+                Compose a new reflection
+              </button>
+              <a class="btn btn-ghost" href="./about.html">Read the real story</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="card reveal prose">
+            <p class="section-kicker">How this was made</p>
+            <h2 class="section-title">Transparency</h2>
+            <p>
+              The verse fragments above were generated with a large-language model and
+              then edited for tone and accuracy. The recombination logic — which stitches
+              an opening, a middle, and a closing into a fresh three-line reflection on
+              every click — is my own ES6 code. Nothing here is presented as human-written
+              where it isn't: the goal is to show how AI can be a drafting partner while a
+              person stays in control of what ships.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <p class="muted">
+          © 2026 Harshitha Seetharaman · Built with vanilla HTML, CSS &amp; ES6.
+        </p>
+        <ul class="footer-links">
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="./about.html">About</a></li>
+          <li><a href="./ai.html">AI Room</a></li>
+          <li>
+            <a
+              href="https://harshitha-seetharaman-portfolio.vercel.app/"
+              target="_blank"
+              rel="noopener"
+              >Portfolio</a
+            >
+          </li>
+        </ul>
+      </div>
+    </footer>
+  </body>
+</html>

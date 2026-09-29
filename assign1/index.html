@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Harshitha Seetharaman — Data &amp; Software Engineer</title>
+
+    <!-- Meta information (author, description, icon) -->
+    <meta name="author" content="Harshitha Seetharaman" />
+    <meta
+      name="description"
+      content="Harshitha Seetharaman — MS Computer Science student at Northeastern University building data systems, analytics, and software. Explore her work through an interactive terminal."
+    />
+    <meta
+      name="keywords"
+      content="Harshitha Seetharaman, data engineer, software developer, Northeastern, analytics, portfolio"
+    />
+    <meta name="theme-color" content="#1e3d32" />
+
+    <!-- Open Graph for correct thumbnails when shared / submitted -->
+    <meta
+      property="og:title"
+      content="Harshitha Seetharaman — Data &amp; Software Engineer"
+    />
+    <meta
+      property="og:description"
+      content="An interactive homepage. Type a command to explore my work."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="./images/avatar.jpg" />
+
+    <link rel="icon" type="image/svg+xml" href="./images/favicon.svg" />
+    <link rel="apple-touch-icon" href="./images/avatar.jpg" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/styles.css" />
+    <script type="module" src="./js/main.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+      <div class="container nav">
+        <a class="brand" href="./index.html">
+          <span class="brand-mark" aria-hidden="true">HS</span>
+          <span>Harshitha Seetharaman</span>
+        </a>
+        <nav aria-label="Primary">
+          <ul class="nav-links">
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./about.html">About</a></li>
+            <li><a href="./ai.html">AI Room</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+        <button type="button" class="theme-toggle" aria-label="Toggle colour theme">
+          <span aria-hidden="true">◐</span>
+          <span class="theme-label">Dark</span>
+        </button>
+      </div>
+    </header>
+
+    <main id="main">
+      <!-- HERO -->
+      <section class="hero">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow">
+              <span class="pulse-dot" aria-hidden="true"></span> Boston · open to Fall
+              2026
+            </p>
+            <h1 class="hero-title">
+              I turn data into<br /><span class="accent">decisions</span>.
+            </h1>
+            <p class="rotator" aria-hidden="true">
+              &gt; <span class="rotator-text"></span><span class="caret">&nbsp;</span>
+            </p>
+            <p class="hero-lede">
+              Hi, I'm Harshitha — an MS Computer Science student at Northeastern
+              University who works with data until it starts making sense. I build
+              pipelines, databases, and the interfaces that make them readable.
+            </p>
+            <div class="hero-cta">
+              <a class="btn btn-primary" href="#projects">View my work</a>
+              <a class="btn btn-ghost" href="./about.html">More about me</a>
+            </div>
+          </div>
+
+          <figure class="portrait">
+            <span class="portrait-frame" aria-hidden="true"></span>
+            <img
+              class="portrait-img"
+              src="./images/avatar.jpg"
+              width="320"
+              height="320"
+              alt="Portrait of Harshitha Seetharaman smiling outdoors in a beige sweater"
+            />
+            <figcaption class="portrait-badge">
+              <span class="pulse-dot" aria-hidden="true"></span> Currently: MS CS @
+              Northeastern
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <!-- SIGNATURE COMPONENT: TERMINAL -->
+      <section class="section" id="terminal" aria-labelledby="terminal-title">
+        <div class="container">
+          <div class="section-head reveal">
+            <div>
+              <p class="section-kicker">Original component</p>
+              <h2 class="section-title" id="terminal-title">
+                Explore me through a terminal
+              </h2>
+            </div>
+            <p class="muted">
+              Prefer clicking? Everything here also lives on the
+              <a href="./about.html">About</a> page.
+            </p>
+          </div>
+
+          <div
+            class="terminal reveal"
+            role="group"
+            aria-label="Interactive terminal. Type a command such as help."
+          >
+            <div class="terminal-bar">
+              <span class="terminal-dot dot-red" aria-hidden="true"></span>
+              <span class="terminal-dot dot-amber" aria-hidden="true"></span>
+              <span class="terminal-dot dot-green" aria-hidden="true"></span>
+              <span class="terminal-title">visitor@harshitha: ~</span>
+            </div>
+            <div class="terminal-body" role="log" aria-live="polite"></div>
+            <div class="terminal-inputline">
+              <span class="term-prompt" aria-hidden="true">$</span>
+              <label class="skip-link" for="terminal-input">Terminal command input</label>
+              <input
+                class="terminal-input"
+                id="terminal-input"
+                type="text"
+                autocomplete="off"
+                autocapitalize="off"
+                spellcheck="false"
+                placeholder="type a command, e.g. help"
+              />
+            </div>
+          </div>
+          <p class="terminal-hint">
+            Try <code>help</code>, <code>projects</code>, <code>skills</code>, or
+            <code>theme</code>. Use ↑ / ↓ for history and Tab to autocomplete.
+          </p>
+        </div>
+      </section>
+
+      <!-- PROJECTS -->
+      <section class="section" id="projects" aria-labelledby="projects-title">
+        <div class="container">
+          <div class="section-head reveal">
+            <div>
+              <p class="section-kicker">Selected work</p>
+              <h2 class="section-title" id="projects-title">Things I've shipped</h2>
+            </div>
+          </div>
+          <div class="grid grid-projects">
+            <article class="card reveal">
+              <h3 class="card-title"><span class="card-index">01</span> HormuzPulse</h3>
+              <p class="card-blurb">
+                A shipping, port, and trade-lane analytics platform that consolidates
+                public maritime data for same-day reporting.
+              </p>
+              <p class="card-highlight">
+                End-to-end pipeline: ingest → model → dashboard.
+              </p>
+              <ul class="tag-row">
+                <li class="tag">Python</li>
+                <li class="tag">SQL</li>
+                <li class="tag">BigQuery</li>
+                <li class="tag">Apache Airflow</li>
+              </ul>
+            </article>
+
+            <article class="card reveal">
+              <h3 class="card-title"><span class="card-index">02</span> AccessMap+</h3>
+              <p class="card-blurb">
+                A relational database that organizes accessibility information so people
+                can find step-free, inclusive routes and places.
+              </p>
+              <p class="card-highlight">Entity modeling with composite indexing.</p>
+              <ul class="tag-row">
+                <li class="tag">MySQL</li>
+                <li class="tag">SQL</li>
+                <li class="tag">Schema Design</li>
+              </ul>
+            </article>
+
+            <article class="card reveal">
+              <h3 class="card-title"><span class="card-index">03</span> BrainCost</h3>
+              <p class="card-blurb">
+                Clinical-note analysis that estimates healthcare resource cost, comparing
+                classic baselines against transformer models.
+              </p>
+              <p class="card-highlight">
+                Baseline vs. transformer on real clinical text.
+              </p>
+              <ul class="tag-row">
+                <li class="tag">PyTorch</li>
+                <li class="tag">scikit-learn</li>
+                <li class="tag">spaCy</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- SKILLS -->
+      <section class="section" id="skills" aria-labelledby="skills-title">
+        <div class="container">
+          <div class="section-head reveal">
+            <div>
+              <p class="section-kicker">Toolkit</p>
+              <h2 class="section-title" id="skills-title">What I build with</h2>
+            </div>
+          </div>
+          <div class="grid grid-two">
+            <div class="card reveal">
+              <div class="skill-group">
+                <h3>Languages</h3>
+                <ul class="pill-list">
+                  <li class="pill">Python</li>
+                  <li class="pill">SQL</li>
+                  <li class="pill">JavaScript</li>
+                  <li class="pill">HTML5</li>
+                  <li class="pill">CSS3</li>
+                </ul>
+              </div>
+              <div class="skill-group">
+                <h3>Databases</h3>
+                <ul class="pill-list">
+                  <li class="pill">PostgreSQL</li>
+                  <li class="pill">MySQL</li>
+                  <li class="pill">BigQuery</li>
+                  <li class="pill">Databricks</li>
+                </ul>
+              </div>
+            </div>
+            <div class="card reveal">
+              <div class="skill-group">
+                <h3>Data &amp; Pipelines</h3>
+                <ul class="pill-list">
+                  <li class="pill">Apache Airflow</li>
+                  <li class="pill">dbt</li>
+                  <li class="pill">Apache Spark</li>
+                  <li class="pill">Power BI</li>
+                </ul>
+              </div>
+              <div class="skill-group">
+                <h3>ML / NLP &amp; Engineering</h3>
+                <ul class="pill-list">
+                  <li class="pill">scikit-learn</li>
+                  <li class="pill">PyTorch</li>
+                  <li class="pill">spaCy</li>
+                  <li class="pill">Git</li>
+                  <li class="pill">Docker</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section class="section" id="contact" aria-labelledby="contact-title">
+        <div class="container">
+          <div class="card reveal">
+            <p class="section-kicker">Say hello</p>
+            <h2 class="section-title" id="contact-title">Let's build something clear.</h2>
+            <p class="card-blurb">
+              I'm looking for Fall 2026 internships in data, analytics, and product. The
+              fastest way to reach me is email or LinkedIn.
+            </p>
+            <div class="hero-cta">
+              <a class="btn btn-primary" href="mailto:seetharaman.ha@northeastern.edu"
+                >Email me</a
+              >
+              <a
+                class="btn btn-ghost"
+                href="https://www.linkedin.com/in/harshitha-seetharaman-97098a213/"
+                target="_blank"
+                rel="noopener"
+                >LinkedIn</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <p class="muted">
+          © 2026 Harshitha Seetharaman · Built with vanilla HTML, CSS &amp; ES6.
+        </p>
+        <ul class="footer-links">
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="./about.html">About</a></li>
+          <li><a href="./ai.html">AI Room</a></li>
+          <li>
+            <a
+              href="https://harshitha-seetharaman-portfolio.vercel.app/"
+              target="_blank"
+              rel="noopener"
+              >Portfolio</a
+            >
+          </li>
+        </ul>
+      </div>
+    </footer>
+  </body>
+</html>

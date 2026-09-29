@@ -1,0 +1,29 @@
+{
+  "name": "harshitha-homepage",
+  "version": "1.0.0",
+  "description": "Personal homepage for Harshitha Seetharaman — vanilla HTML5, CSS3, and ES6 modules with an interactive terminal.",
+  "type": "module",
+  "author": "Harshitha Seetharaman <seetharaman.ha@northeastern.edu>",
+  "license": "MIT",
+  "homepage": "https://harshitha-seetharaman-portfolio.vercel.app/",
+  "keywords": [
+    "homepage",
+    "portfolio",
+    "es6-modules",
+    "vanilla-js",
+    "css3"
+  ],
+  "scripts": {
+    "start": "npx serve .",
+    "dev": "npx serve .",
+    "lint": "eslint js",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.13.0",
+    "eslint": "^9.13.0",
+    "globals": "^15.11.0",
+    "prettier": "^3.3.3"
+  }
+}
