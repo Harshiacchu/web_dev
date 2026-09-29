@@ -2,7 +2,7 @@
    styles.css — "Reading Room" theme
    A warm, royal interior palette: deep forest green + cream + walnut brown,
    finished with an aged-gold accent. Motion-led but calm.
-   No !important anywhere; specificity is kept flat via class selectors.
+   No importance overrides are used; specificity is kept flat via classes.
    ========================================================================= */
 
 :root {
