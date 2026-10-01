@@ -49,8 +49,9 @@ export function initRunner() {
   } catch (error) {
     void error;
   }
-  // Default on, unless the visitor turned it off or prefers reduced motion.
-  let enabled = saved ? saved === "on" : !reduceMotion;
+  // Default on for fine pointers; the visitor can switch it off at any time.
+  // Reduced-motion users still get the buddy, just without the limb animation.
+  let enabled = saved ? saved === "on" : true;
 
   // Start off-screen so the buddy slides in on the first pointer move.
   const target = { x: -80, y: -80 };
@@ -89,9 +90,12 @@ export function initRunner() {
     const running = speed > 3;
     if (running) {
       facing = dx < 0 ? -1 : 1;
-      runner.classList.add("is-running");
-      window.clearTimeout(idleTimer);
-      idleTimer = window.setTimeout(() => runner.classList.remove("is-running"), 140);
+      // Limb animation only when the visitor has not asked to reduce motion.
+      if (!reduceMotion) {
+        runner.classList.add("is-running");
+        window.clearTimeout(idleTimer);
+        idleTimer = window.setTimeout(() => runner.classList.remove("is-running"), 140);
+      }
     }
 
     // Offset so the character rides just below and behind the cursor tip.
