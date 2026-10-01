@@ -122,7 +122,7 @@ the page loads, so that I can decide whether to keep reading.
 
 _Narrative:_ Priya opens the link between interviews. Before she scrolls, the hero
 says "I turn data into decisions," a rotating tagline cycles through her roles,
-and a status pill reads "open to Fall 2026." She knows in seconds this is a
+and a status pill reads "open to Spring 2027." She knows in seconds this is a
 data/software candidate.
 
 _Acceptance:_ Hero headline, animated role rotator, and availability status are
@@ -223,7 +223,7 @@ Low-fidelity wireframes below define layout and hierarchy. Colors follow the
 │ [HS] Harshitha Seetharaman     Home  About  AI Lens  Projects  [◐ Dark]│  ← sticky nav
 ├──────────────────────────────────────────────────────────────────────┤
 │                                                                        │
-│  • Boston · open to Fall 2026                     ╭──────────────╮      │
+│  • Boston · open to Spring 2027                     ╭──────────────╮      │
 │                                                   │  ◜ rotating ◝ │      │
 │  I turn data into                                 │ ( portrait  ) │      │
 │  *decisions*.                                     │  ◟  frame  ◞  │      │
@@ -267,7 +267,7 @@ Low-fidelity wireframes below define layout and hierarchy. Colors follow the
 │      ╭───────────╮         │
 │      │ portrait  │         │  ← portrait first (stacked)
 │      ╰───────────╯         │
-│  • open to Fall 2026       │
+│  • open to Spring 2027       │
 │  I turn data into          │
 │  *decisions*.              │
 │  > Data Engineer_          │
@@ -339,7 +339,11 @@ Low-fidelity wireframes below define layout and hierarchy. Colors follow the
 - **Nav:** sticky, translucent blur; active page highlighted (set in JS).
 - **Rotator:** typewriter types/deletes each role; caret blinks; static under
   reduced-motion.
-- **Portrait:** conic-gradient frame slowly rotates behind a circular photo.
+- **Portrait:** a duotone "illustrated" avatar that fades to the full-colour
+  photo on hover, framed by slow rotating rings.
+- **Running buddy:** an endless-runner character (my avatar on a hoverboard)
+  chases the cursor, flips to face its direction, and kicks up dust; it never
+  blocks clicks, offers an on/off toggle, and is disabled under reduced-motion.
 - **Terminal:** auto-runs `about` + `help` on load; input focuses on click.
 - **Reveal:** sections fade/slide up via IntersectionObserver.
 - **Pointer glow:** a soft gold radial light follows the cursor (disabled under

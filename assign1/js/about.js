@@ -2,12 +2,14 @@
 // Reuses the shared UI behaviours; no terminal on this page.
 
 import { initTheme, initReveal, initPointerGlow, initActiveNav } from "./ui.js";
+import { initRunner } from "./runner.js";
 
 function boot() {
   initTheme();
   initActiveNav();
   initReveal();
   initPointerGlow();
+  initRunner();
 }
 
 if (document.readyState === "loading") {

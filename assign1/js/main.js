@@ -11,12 +11,14 @@ import {
   toggleTheme,
 } from "./ui.js";
 import { initTerminal, registerThemeSwitcher } from "./terminal.js";
+import { initRunner } from "./runner.js";
 
 function boot() {
   initTheme();
   initActiveNav();
   initReveal();
   initPointerGlow();
+  initRunner();
 
   const rotatorTarget = document.querySelector(".rotator-text");
   if (rotatorTarget) typewriter(rotatorTarget, roles);

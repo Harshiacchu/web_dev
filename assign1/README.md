@@ -50,6 +50,10 @@ interactive component, and is deployed publicly. The full design rationale
   all reduced under `prefers-reduced-motion`.
 - 🤖 **AI Lens page** (`ai.html`) — pick a prompt and an AI-drafted answer types
   out in real time, with full transparency notes.
+- 🏃 **Running buddy** (`js/runner.js`) — an endless-runner style character with
+  my avatar on a hoverboard chases the cursor across the site, flipping to face
+  its direction. It never blocks clicks, has an on/off toggle (remembered), and
+  only runs on fine pointers with motion allowed.
 - ♿ Accessible: skip link, `alt` text on all images, `aria` labels, semantic
   HTML, real `<button>` elements.
 - 📱 Responsive layout using CSS Grid **and** Flexbox.
@@ -85,9 +89,10 @@ assign1/
 │   ├── data.js         # Shared content (single source of truth)
 │   ├── terminal.js     # Interactive terminal component
 │   ├── ui.js           # Theme, typewriter, reveal, pointer glow
+│   ├── runner.js       # Running buddy cursor follower
 │   ├── main.js         # Home entry point
 │   ├── about.js        # About entry point
-│   └── ai.js           # AI page entry point + generator
+│   └── ai.js           # AI Lens entry point + typing effect
 ├── images/             # avatar, favicon, screenshot
 ├── DESIGN.md           # Design document (description, personas, stories, mockups)
 ├── package.json        # type: module + dependencies

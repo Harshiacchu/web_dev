@@ -4,6 +4,7 @@
 // and the lens switching logic are original ES6, no libraries.
 
 import { initTheme, initReveal, initPointerGlow, initActiveNav } from "./ui.js";
+import { initRunner } from "./runner.js";
 
 // Each lens pairs a prompt with its AI drafted answer.
 const lenses = [
@@ -64,6 +65,7 @@ function boot() {
   initActiveNav();
   initReveal();
   initPointerGlow();
+  initRunner();
 
   const chips = Array.from(document.querySelectorAll(".lens-chip"));
   const answer = document.querySelector(".lens-answer");

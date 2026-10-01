@@ -7,7 +7,7 @@ export const profile = {
   tagline: "I work with data until it starts making sense.",
   location: "Boston, Massachusetts",
   email: "seetharaman.ha@northeastern.edu",
-  status: "Seeking Fall 2026 internships in data, analytics & product.",
+  status: "Seeking Spring 2027 internships in data, analytics & product.",
 };
 
 export const links = {
@@ -90,13 +90,13 @@ export const experience = [
 ];
 
 export const achievements = [
-  "Coauthored an IoT research paper, presented at ICSTSDG 2024.",
+  "Coauthored and presented an IoT research paper at ICSTSDG 2024.",
   "Smart India Hackathon Finalist (2022 & 2024).",
 ];
 
 export const interests = [
   "Crime thrillers",
-  "K-dramas",
+  "Korean dramas",
   "Horror films",
   "Fiction",
   "Animal volunteering",
