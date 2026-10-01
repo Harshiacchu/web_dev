@@ -83,6 +83,18 @@ body {
   transition:
     background-color 0.5s var(--ease),
     color 0.5s var(--ease);
+  animation: page-enter 0.7s var(--ease) both;
+}
+
+@keyframes page-enter {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
 }
 
 /* A pointer-following warm glow layer — set via CSS custom props from JS. */
@@ -359,16 +371,37 @@ a {
 }
 
 /* Portrait / avatar */
+/* Hidden container for the SVG duotone filter. */
+.svg-defs {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
 .portrait {
   position: relative;
   justify-self: center;
   width: min(320px, 78vw);
   aspect-ratio: 1;
+  outline: none;
+  animation: portrait-float 7s var(--ease) infinite;
 }
 
+@keyframes portrait-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Slow, subtle gradient halo behind the avatar. */
 .portrait-frame {
   position: absolute;
-  inset: 0;
+  inset: -2%;
   border-radius: 50%;
   padding: 10px;
   background: conic-gradient(
@@ -378,7 +411,19 @@ a {
     var(--walnut),
     var(--gold)
   );
-  animation: spin 18s linear infinite;
+  opacity: 0.85;
+  filter: blur(2px);
+  animation: spin 32s linear infinite;
+}
+
+/* A crisp hairline ring that counter rotates for a refined, kinetic edge. */
+.portrait-ring {
+  position: absolute;
+  inset: 4px;
+  border-radius: 50%;
+  border: 1px solid color-mix(in srgb, var(--gold) 60%, transparent);
+  z-index: 2;
+  animation: spin 46s linear infinite reverse;
 }
 
 @keyframes spin {
@@ -396,6 +441,18 @@ a {
   border-radius: 50%;
   border: 6px solid var(--panel);
   box-shadow: var(--shadow);
+  /* Rendered as a green/cream illustrated avatar by default. */
+  filter: url(#avatarDuotone) contrast(1.02);
+  transition:
+    filter 0.7s var(--ease),
+    transform 0.7s var(--ease);
+}
+
+/* Smoothly reveal the real, full colour photo on hover or keyboard focus. */
+.portrait:hover .portrait-img,
+.portrait:focus-visible .portrait-img {
+  filter: none;
+  transform: scale(1.02);
 }
 
 .portrait-badge {
@@ -771,13 +828,15 @@ a {
   border: 1px solid var(--line);
   font-size: 0.9rem;
   transition:
-    transform 0.2s var(--ease),
-    border-color 0.2s var(--ease);
+    transform 0.25s var(--ease),
+    border-color 0.25s var(--ease),
+    box-shadow 0.25s var(--ease);
 }
 
 .pill:hover {
-  transform: translateY(-2px) rotate(-1.5deg);
+  transform: translateY(-2px);
   border-color: var(--gold);
+  box-shadow: var(--shadow-soft);
 }
 
 /* ---------- Reveal-on-scroll (progressive enhancement) ----------
@@ -863,13 +922,126 @@ a {
   color: var(--text);
 }
 
-.poem {
-  font-family: var(--font-display);
-  font-size: 1.25rem;
-  line-height: 1.9;
-  font-style: italic;
-  white-space: pre-line;
+/* ---------- AI Lens (ai.html signature component) ---------- */
+.lens {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Slow sheen that drifts across the panel for a subtle, premium feel. */
+.lens-shine {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    115deg,
+    transparent 30%,
+    color-mix(in srgb, var(--gold) 16%, transparent) 50%,
+    transparent 70%
+  );
+  background-size: 250% 100%;
+  animation: lens-sheen 7s var(--ease) infinite;
+}
+
+@keyframes lens-sheen {
+  0% {
+    background-position: 160% 0;
+  }
+  100% {
+    background-position: -60% 0;
+  }
+}
+
+.lens-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin: 0.4rem 0 1.4rem;
+}
+
+.lens-chip {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: var(--panel);
+  color: var(--text-muted);
+  transition:
+    transform 0.25s var(--ease),
+    border-color 0.25s var(--ease),
+    color 0.25s var(--ease),
+    background 0.25s var(--ease),
+    box-shadow 0.25s var(--ease);
+}
+
+.lens-chip:hover {
+  transform: translateY(-2px);
+  border-color: var(--gold);
   color: var(--text);
+}
+
+.lens-chip.is-active {
+  color: var(--cream);
+  background: linear-gradient(135deg, var(--forest-soft), var(--forest));
+  border-color: var(--forest);
+  box-shadow: var(--shadow-soft);
+}
+
+:root[data-theme="dark"] .lens-chip.is-active {
+  color: var(--forest-deep);
+  background: linear-gradient(135deg, var(--gold-bright), var(--gold));
+  border-color: var(--gold);
+}
+
+.lens-prompt {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  margin: 0 0 0.6rem;
+}
+
+.lens-prompt-label {
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  padding: 0.15rem 0.55rem;
+  border-radius: 6px;
+  background: color-mix(in srgb, var(--gold) 20%, transparent);
+  color: var(--walnut);
+}
+
+:root[data-theme="dark"] .lens-prompt-label {
+  color: var(--gold-bright);
+}
+
+.lens-answer {
+  position: relative;
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(1.3rem, 3vw, 1.9rem);
+  line-height: 1.5;
+  font-style: italic;
+  color: var(--text);
+  min-height: 3.2em;
+  border-left: 3px solid var(--gold);
+  padding-left: 1rem;
+  transition: opacity 0.2s var(--ease);
+}
+
+/* Blinking caret while the answer is being typed. */
+.lens-answer.is-typing::after {
+  content: "";
+  display: inline-block;
+  width: 0.55ch;
+  height: 1.05em;
+  margin-left: 2px;
+  vertical-align: text-bottom;
+  background: var(--accent);
+  animation: blink 1s steps(1) infinite;
 }
 
 /* ---------- Responsive ---------- */

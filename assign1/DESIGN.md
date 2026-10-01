@@ -46,11 +46,11 @@ study" theme that is remembered between visits.
 
 ### 1.5 Scope & pages
 
-| Page    | URL          | Purpose                                                                                                        |
-| ------- | ------------ | -------------------------------------------------------------------------------------------------------------- |
-| Home    | `index.html` | Hero, interactive terminal, projects, skills, contact                                                          |
-| About   | `about.html` | Fuller bio, education & experience timeline, achievements, interests                                           |
-| AI Room | `ai.html`    | Required AI-generated page: an AI-drafted reflection with a "compose again" generator, plus transparency notes |
+| Page    | URL          | Purpose                                                                                                    |
+| ------- | ------------ | ---------------------------------------------------------------------------------------------------------- |
+| Home    | `index.html` | Hero, interactive terminal, projects, skills, contact                                                      |
+| About   | `about.html` | Fuller bio, education & experience timeline, achievements, interests                                       |
+| AI Lens | `ai.html`    | Required AI-generated page: pick a prompt and an AI-drafted answer types out live, plus transparency notes |
 
 ### 1.6 Technology & constraints
 
@@ -192,12 +192,12 @@ under `prefers-reduced-motion`.
 **As the professor**, I want a clearly labeled AI-generated page, so that I can
 grade that requirement and assess honesty about AI use.
 
-_Narrative:_ The grader visits "AI Room," reads that the verse was AI-drafted and
-curated, clicks "Compose a new reflection" to see the generator work, and finds
-model/version/prompt details in the README.
+_Narrative:_ The grader visits "AI Lens," reads that the answers were AI-drafted
+and curated, clicks a prompt chip and watches the AI answer type out live, and
+finds model/version/prompt details in the README.
 
 _Acceptance:_ `ai.html` is a distinct URL, clearly marked AI-generated, includes a
-working interactive generator, and the README documents the GenAI tools used.
+working interactive feature, and the README documents the GenAI tools used.
 
 ### Story 8 — Verify the build (grading)
 
@@ -220,7 +220,7 @@ Low-fidelity wireframes below define layout and hierarchy. Colors follow the
 
 ```
 ┌──────────────────────────────────────────────────────────────────────┐
-│ [HS] Harshitha Seetharaman     Home  About  AI Room  Projects  [◐ Dark]│  ← sticky nav
+│ [HS] Harshitha Seetharaman     Home  About  AI Lens  Projects  [◐ Dark]│  ← sticky nav
 ├──────────────────────────────────────────────────────────────────────┤
 │                                                                        │
 │  • Boston · open to Fall 2026                     ╭──────────────╮      │
@@ -254,7 +254,7 @@ Low-fidelity wireframes below define layout and hierarchy. Colors follow the
 ├──────────────────────────────────────────────────────────────────────┤
 │  SAY HELLO — Let's build something clear.   [ Email me ] [ LinkedIn ]   │
 ├──────────────────────────────────────────────────────────────────────┤
-│  © 2026 Harshitha · Home  About  AI Room  Portfolio                     │
+│  © 2026 Harshitha · Home  About  AI Lens  Portfolio                     │
 └──────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -312,23 +312,23 @@ Low-fidelity wireframes below define layout and hierarchy. Colors follow the
 └──────────────────────────────────────────────────────────────────────┘
 ```
 
-### 4.4 AI Room — desktop
+### 4.4 AI Lens — desktop
 
 ```
 ┌──────────────────────────────────────────────────────────────────────┐
 │  nav …                                                                 │
 ├──────────────────────────────────────────────────────────────────────┤
-│  AI-GENERATED PAGE                                                     │
-│  Written with a little help from AI.                                    │
+│  AI GENERATED PAGE                                                     │
+│  Seen through an AI lens.                                               │
 │  (explains model + that README documents prompts)                      │
 ├──────────────────────────────────────────────────────────────────────┤
-│  ╭──── gold callout ─────────────────────────────────────────────╮    │
-│  │  A machine-made verse about me                                  │    │
-│  │    She reads the noise in a spreadsheet                         │    │
-│  │    and waits for the story to surface,                          │    │
-│  │    until it starts making sense.                                │    │
-│  │  [ Compose a new reflection ]   [ Read the real story ]         │    │
-│  ╰────────────────────────────────────────────────────────────────╯    │
+│  ╭──── panel (subtle sheen) ───────────────────────────────────────╮  │
+│  │  CHOOSE A LENS                                                   │  │
+│  │  [One line summary] [What she solves] [Recruiter] [Data] [Fun]   │  │
+│  │  PROMPT  One line summary                                        │  │
+│  │  │ Harshitha is a data and software engineer who turns messy     │  │
+│  │  │ information into decisions people can act on._                 │  │
+│  ╰──────────────────────────────────────────────────────────────────╯  │
 ├──────────────────────────────────────────────────────────────────────┤
 │  TRANSPARENCY — how this was made (prose)                              │
 └──────────────────────────────────────────────────────────────────────┘
@@ -354,7 +354,7 @@ Low-fidelity wireframes below define layout and hierarchy. Colors follow the
 index.html  ──► #terminal ─► #projects ─► #skills ─► #contact
    │
    ├─► about.html  (education, experience, recognition, interests)
-   └─► ai.html     (AI-generated reflection + transparency)
+   └─► ai.html     (AI generated answers + transparency)
                        ▲
 data.js  ──────────────┘  (shared content consumed by the terminal)
 ```

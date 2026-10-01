@@ -46,10 +46,10 @@ interactive component, and is deployed publicly. The full design rationale
 - 🎨 **"Reading Room" theme** with a persistent light/dark toggle (saved to
   `localStorage`, defaults to your OS preference).
 - ✍️ **Typewriter role rotator**, scroll-reveal sections, a pointer-following
-  glow, and a rotating portrait frame — all disabled under
-  `prefers-reduced-motion`.
-- 🤖 **AI Room page** (`ai.html`) — an AI-drafted reflection with a "compose
-  again" generator and full transparency notes.
+  glow, and a **duotone avatar** that fades to the full-colour photo on hover —
+  all reduced under `prefers-reduced-motion`.
+- 🤖 **AI Lens page** (`ai.html`) — pick a prompt and an AI-drafted answer types
+  out in real time, with full transparency notes.
 - ♿ Accessible: skip link, `alt` text on all images, `aria` labels, semantic
   HTML, real `<button>` elements.
 - 📱 Responsive layout using CSS Grid **and** Flexbox.
@@ -60,7 +60,7 @@ interactive component, and is deployed publicly. The full design rationale
 | ------- | ------------ | -------------------------------------------------------------- |
 | Home    | `index.html` | Hero, terminal, projects, skills, contact                      |
 | About   | `about.html` | Bio, education & experience timelines, achievements, interests |
-| AI Room | `ai.html`    | AI-generated page with an interactive generator                |
+| AI Lens | `ai.html`    | AI-generated page: pick a prompt, an AI answer types out       |
 
 ## Tech Stack
 
@@ -150,7 +150,7 @@ All output was reviewed, edited, and verified by me before inclusion.
 | Tool            | Model / Version                 | How it was used                                                                                                                                       |
 | --------------- | ------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Claude Code** | Claude **Opus 4.8** (Anthropic) | Scaffolding the file/folder structure, drafting the HTML/CSS/JS boilerplate, wiring the ES6 modules, and writing the design document and this README. |
-| **Claude**      | Claude **Opus 4.8** (Anthropic) | Generating the short verse fragments used on the AI Room page (`ai.html`), which I then curated for tone and accuracy.                                |
+| **Claude**      | Claude **Opus 4.8** (Anthropic) | Drafting the short "AI Lens" answers used on `ai.html`, which I then curated for tone and accuracy.                                                   |
 
 **Representative prompts used:**
 
@@ -160,13 +160,14 @@ All output was reviewed, edited, and verified by me before inclusion.
   accessible."_
 - _"Write an ES6 module for an in-browser terminal that renders content from a
   shared data module and supports command history and Tab autocompletion."_
-- _"Generate a few three-line poetic fragments (opening / middle / closing) that
-  riff on the tagline 'I work with data until it starts making sense.'"_
+- _"Write five short answers describing Harshitha through different lenses: a one
+  line summary, what she likes to solve, a recruiter's view, her approach to
+  data, and a lighter note."_
 
 **What was NOT AI-generated:** my personal information, projects, résumé content,
 photograph, and the final decisions on design, wording, and what shipped. The
-recombination logic in `js/ai.js` is original code; the AI only produced raw
-fragments that I selected from.
+typing effect and lens-switching logic in `js/ai.js` are original code; the AI
+only produced the raw answer text that I selected from and edited.
 
 ## License
 

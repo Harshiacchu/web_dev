@@ -3,18 +3,18 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>AI Room — Harshitha Seetharaman</title>
+    <title>AI Lens · Harshitha Seetharaman</title>
 
     <meta name="author" content="Harshitha Seetharaman" />
     <meta
       name="description"
-      content="An AI-generated page: a short reflection about Harshitha, drafted with a generative-AI model and curated by hand. Click to compose a new version."
+      content="AI Lens: an AI generated page that describes Harshitha through different prompts. Pick a lens and watch an AI written answer appear."
     />
     <meta name="theme-color" content="#1e3d32" />
-    <meta property="og:title" content="AI Room — Harshitha Seetharaman" />
+    <meta property="og:title" content="AI Lens · Harshitha Seetharaman" />
     <meta
       property="og:description"
-      content="A page written with a little help from AI."
+      content="A page written with a little help from AI. Pick a prompt, read the answer."
     />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="./images/avatar.jpg" />
@@ -44,7 +44,7 @@
           <ul class="nav-links">
             <li><a href="./index.html">Home</a></li>
             <li><a href="./about.html">About</a></li>
-            <li><a href="./ai.html">AI Room</a></li>
+            <li><a href="./ai.html">AI Lens</a></li>
             <li><a href="./index.html#projects">Projects</a></li>
             <li><a href="./index.html#contact">Contact</a></li>
           </ul>
@@ -59,29 +59,38 @@
     <main id="main">
       <section class="page-hero">
         <div class="container">
-          <p class="eyebrow">AI-generated page</p>
-          <h1>Written with a little help from AI.</h1>
+          <p class="eyebrow">AI generated page</p>
+          <h1>Seen through an AI lens.</h1>
           <p class="lede">
-            This page was drafted using a generative-AI model, then curated by me. It
-            takes my own tagline —
-            <em>"I work with data until it starts making sense"</em> — and turns it into a
-            tiny, ever-changing reflection. The exact model, version, and prompts are
-            documented in the project README.
+            This page was drafted with a generative AI model and curated by me. Pick a
+            lens below and the model's answer appears, typed out in real time. The exact
+            model, version, and prompts are documented in the project README.
           </p>
         </div>
       </section>
 
       <section class="section">
         <div class="container">
-          <div class="card reveal callout">
-            <p class="section-kicker">A machine-made verse about me</p>
-            <p class="poem">Composing…</p>
-            <div class="hero-cta">
-              <button type="button" class="btn btn-primary generate-btn">
-                Compose a new reflection
-              </button>
-              <a class="btn btn-ghost" href="./about.html">Read the real story</a>
+          <div class="lens card reveal">
+            <div class="lens-shine" aria-hidden="true"></div>
+            <p class="section-kicker">Choose a lens</p>
+            <div class="lens-chips" role="group" aria-label="Prompt choices">
+              <button type="button" class="lens-chip is-active">One line summary</button>
+              <button type="button" class="lens-chip">What she likes to solve</button>
+              <button type="button" class="lens-chip">In a recruiter's words</button>
+              <button type="button" class="lens-chip">Her approach to data</button>
+              <button type="button" class="lens-chip">A lighter note</button>
             </div>
+
+            <p class="lens-prompt">
+              <span class="lens-prompt-label">Prompt</span>
+              <span class="lens-prompt-text">One line summary</span>
+            </p>
+
+            <blockquote class="lens-answer" aria-live="polite">
+              Harshitha is a data and software engineer who turns messy information into
+              decisions people can act on.
+            </blockquote>
           </div>
         </div>
       </section>
@@ -92,12 +101,11 @@
             <p class="section-kicker">How this was made</p>
             <h2 class="section-title">Transparency</h2>
             <p>
-              The verse fragments above were generated with a large-language model and
-              then edited for tone and accuracy. The recombination logic — which stitches
-              an opening, a middle, and a closing into a fresh three-line reflection on
-              every click — is my own ES6 code. Nothing here is presented as human-written
-              where it isn't: the goal is to show how AI can be a drafting partner while a
-              person stays in control of what ships.
+              The answers above were generated with a large language model and then edited
+              by me for tone and accuracy. The typing effect and the logic that swaps
+              between lenses is my own ES6 code. Nothing here is presented as human
+              written where it is not. The goal is to show AI working as a drafting
+              partner while a person stays in control of what ships.
             </p>
           </div>
         </div>
@@ -112,7 +120,7 @@
         <ul class="footer-links">
           <li><a href="./index.html">Home</a></li>
           <li><a href="./about.html">About</a></li>
-          <li><a href="./ai.html">AI Room</a></li>
+          <li><a href="./ai.html">AI Lens</a></li>
           <li>
             <a
               href="https://harshitha-seetharaman-portfolio.vercel.app/"

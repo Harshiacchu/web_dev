@@ -1,39 +1,62 @@
 // ai.js — entry point for ai.html (loaded with <script type="module">).
-// This page was drafted with a generative-AI model (documented in the README).
-// The interactive piece below composes a fresh short "reflection" each click by
-// recombining AI-written fragments — deterministic per click, no libraries.
+// "AI Lens": the answers below were drafted by a generative AI model and then
+// curated (see the README for model, version, and prompts). The typing effect
+// and the lens switching logic are original ES6, no libraries.
 
 import { initTheme, initReveal, initPointerGlow, initActiveNav } from "./ui.js";
 
-// Fragments authored with the help of a generative-AI model, then curated.
-const openings = [
-  "She reads the noise in a spreadsheet",
-  "Between a query and its answer",
-  "Where others see a wall of numbers",
-  "In the quiet after a pipeline runs",
-];
-const middles = [
-  "and waits for the story to surface,",
-  "she looks for the shape underneath,",
-  "she keeps the question honest,",
-  "she trims the data down to truth,",
-];
-const closings = [
-  "until it starts making sense.",
-  "then builds a door for the reader.",
-  "and leaves the room a little clearer.",
-  "so the decision almost makes itself.",
+// Each lens pairs a prompt with its AI drafted answer.
+const lenses = [
+  {
+    prompt: "One line summary",
+    answer:
+      "Harshitha is a data and software engineer who turns messy information into decisions people can act on.",
+  },
+  {
+    prompt: "What she likes to solve",
+    answer:
+      "She likes problems where the data is noisy and the answer is hidden: pipelines, modeling, and the quiet moment a dataset finally tells the truth.",
+  },
+  {
+    prompt: "In a recruiter's words",
+    answer:
+      "A dependable builder who pairs strong data fundamentals with clear communication, and who is ready to contribute from day one.",
+  },
+  {
+    prompt: "Her approach to data",
+    answer:
+      "Start from the question, keep the data honest, then build an interface that makes the decision almost obvious.",
+  },
+  {
+    prompt: "A lighter note",
+    answer:
+      "When the queries stop, she is usually deep in a crime thriller, a Korean drama, or a new recipe.",
+  },
 ];
 
-/** Pick an item using a rotating counter so each click feels new. */
-function pick(list, step) {
-  return list[step % list.length];
-}
-
-function compose(step) {
-  return [pick(openings, step), pick(middles, step + 1), pick(closings, step + 2)].join(
-    "\n",
-  );
+/**
+ * Type `text` into `element` one character at a time.
+ * Returns a cancel token so a new request can stop an in flight animation.
+ */
+function typeInto(element, text, token) {
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    element.textContent = text;
+    return;
+  }
+  let index = 0;
+  element.textContent = "";
+  element.classList.add("is-typing");
+  const step = () => {
+    if (token.cancelled) return;
+    element.textContent = text.slice(0, index);
+    index += 1;
+    if (index <= text.length) {
+      window.setTimeout(step, 18);
+    } else {
+      element.classList.remove("is-typing");
+    }
+  };
+  step();
 }
 
 function boot() {
@@ -42,22 +65,28 @@ function boot() {
   initReveal();
   initPointerGlow();
 
-  const output = document.querySelector(".poem");
-  const button = document.querySelector(".generate-btn");
-  let step = 0;
+  const chips = Array.from(document.querySelectorAll(".lens-chip"));
+  const answer = document.querySelector(".lens-answer");
+  const promptText = document.querySelector(".lens-prompt-text");
+  let activeToken = { cancelled: false };
 
-  if (output) output.textContent = compose(step);
+  const selectLens = (lens, chip) => {
+    chips.forEach((item) => item.classList.toggle("is-active", item === chip));
+    if (promptText) promptText.textContent = lens.prompt;
+    if (!answer) return;
+    activeToken.cancelled = true;
+    activeToken = { cancelled: false };
+    const token = activeToken;
+    answer.style.opacity = "0";
+    window.setTimeout(() => {
+      answer.style.opacity = "1";
+      typeInto(answer, lens.answer, token);
+    }, 180);
+  };
 
-  if (button && output) {
-    button.addEventListener("click", () => {
-      step += 1;
-      output.style.opacity = "0";
-      window.setTimeout(() => {
-        output.textContent = compose(step);
-        output.style.opacity = "1";
-      }, 180);
-    });
-  }
+  chips.forEach((chip, index) => {
+    chip.addEventListener("click", () => selectLens(lenses[index], chip));
+  });
 }
 
 if (document.readyState === "loading") {

@@ -3,13 +3,13 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Harshitha Seetharaman — Data &amp; Software Engineer</title>
+    <title>Harshitha Seetharaman · Data &amp; Software Engineer</title>
 
     <!-- Meta information (author, description, icon) -->
     <meta name="author" content="Harshitha Seetharaman" />
     <meta
       name="description"
-      content="Harshitha Seetharaman — MS Computer Science student at Northeastern University building data systems, analytics, and software. Explore her work through an interactive terminal."
+      content="Harshitha Seetharaman is an MS Computer Science student at Northeastern University building data systems, analytics, and software. Explore her work through an interactive terminal."
     />
     <meta
       name="keywords"
@@ -20,7 +20,7 @@
     <!-- Open Graph for correct thumbnails when shared / submitted -->
     <meta
       property="og:title"
-      content="Harshitha Seetharaman — Data &amp; Software Engineer"
+      content="Harshitha Seetharaman · Data &amp; Software Engineer"
     />
     <meta
       property="og:description"
@@ -44,6 +44,27 @@
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
 
+    <!-- Duotone filter: renders the photo as a green/cream illustrated avatar.
+         It smoothly fades to the full colour photo on hover (see CSS). -->
+    <svg class="svg-defs" aria-hidden="true" focusable="false" width="0" height="0">
+      <defs>
+        <filter id="avatarDuotone" color-interpolation-filters="sRGB">
+          <feColorMatrix
+            type="matrix"
+            values="0.33 0.33 0.33 0 0
+                    0.33 0.33 0.33 0 0
+                    0.33 0.33 0.33 0 0
+                    0    0    0    1 0"
+          />
+          <feComponentTransfer>
+            <feFuncR type="table" tableValues="0.078 0.33 0.91" />
+            <feFuncG type="table" tableValues="0.145 0.42 0.87" />
+            <feFuncB type="table" tableValues="0.118 0.29 0.78" />
+          </feComponentTransfer>
+        </filter>
+      </defs>
+    </svg>
+
     <header class="site-header">
       <div class="container nav">
         <a class="brand" href="./index.html">
@@ -54,7 +75,7 @@
           <ul class="nav-links">
             <li><a href="./index.html">Home</a></li>
             <li><a href="./about.html">About</a></li>
-            <li><a href="./ai.html">AI Room</a></li>
+            <li><a href="./ai.html">AI Lens</a></li>
             <li><a href="#projects">Projects</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
@@ -82,9 +103,9 @@
               &gt; <span class="rotator-text"></span><span class="caret">&nbsp;</span>
             </p>
             <p class="hero-lede">
-              Hi, I'm Harshitha — an MS Computer Science student at Northeastern
-              University who works with data until it starts making sense. I build
-              pipelines, databases, and the interfaces that make them readable.
+              Hi, I'm Harshitha, an MS Computer Science student at Northeastern University
+              who works with data until it starts making sense. I build pipelines,
+              databases, and the interfaces that make them readable.
             </p>
             <div class="hero-cta">
               <a class="btn btn-primary" href="#projects">View my work</a>
@@ -92,8 +113,9 @@
             </div>
           </div>
 
-          <figure class="portrait">
+          <figure class="portrait" tabindex="0">
             <span class="portrait-frame" aria-hidden="true"></span>
+            <span class="portrait-ring" aria-hidden="true"></span>
             <img
               class="portrait-img"
               src="./images/avatar.jpg"
@@ -171,11 +193,11 @@
             <article class="card reveal">
               <h3 class="card-title"><span class="card-index">01</span> HormuzPulse</h3>
               <p class="card-blurb">
-                A shipping, port, and trade-lane analytics platform that consolidates
-                public maritime data for same-day reporting.
+                A shipping, port, and trade lane analytics platform that consolidates
+                public maritime data for same day reporting.
               </p>
               <p class="card-highlight">
-                End-to-end pipeline: ingest → model → dashboard.
+                End to end pipeline: ingest → model → dashboard.
               </p>
               <ul class="tag-row">
                 <li class="tag">Python</li>
@@ -189,7 +211,7 @@
               <h3 class="card-title"><span class="card-index">02</span> AccessMap+</h3>
               <p class="card-blurb">
                 A relational database that organizes accessibility information so people
-                can find step-free, inclusive routes and places.
+                can find step free, inclusive routes and places.
               </p>
               <p class="card-highlight">Entity modeling with composite indexing.</p>
               <ul class="tag-row">
@@ -202,7 +224,7 @@
             <article class="card reveal">
               <h3 class="card-title"><span class="card-index">03</span> BrainCost</h3>
               <p class="card-blurb">
-                Clinical-note analysis that estimates healthcare resource cost, comparing
+                Clinical note analysis that estimates healthcare resource cost, comparing
                 classic baselines against transformer models.
               </p>
               <p class="card-highlight">
@@ -309,7 +331,7 @@
         <ul class="footer-links">
           <li><a href="./index.html">Home</a></li>
           <li><a href="./about.html">About</a></li>
-          <li><a href="./ai.html">AI Room</a></li>
+          <li><a href="./ai.html">AI Lens</a></li>
           <li>
             <a
               href="https://harshitha-seetharaman-portfolio.vercel.app/"

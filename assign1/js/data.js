@@ -39,15 +39,15 @@ export const projects = [
     id: "hormuzpulse",
     name: "HormuzPulse",
     blurb:
-      "Shipping, port, and trade-lane analytics platform that consolidates public maritime data for same-day reporting.",
+      "Shipping, port, and trade lane analytics platform that consolidates public maritime data for same day reporting.",
     stack: ["Python", "SQL", "BigQuery", "Apache Airflow"],
-    highlight: "End-to-end pipeline: ingest → model → dashboard.",
+    highlight: "End to end pipeline: ingest → model → dashboard.",
   },
   {
     id: "accessmap",
     name: "AccessMap+",
     blurb:
-      "A relational database that organizes accessibility information so people can find step-free, inclusive routes and places.",
+      "A relational database that organizes accessibility information so people can find step free, inclusive routes and places.",
     stack: ["MySQL", "SQL", "Schema Design"],
     highlight: "Entity modeling with composite indexing for fast lookups.",
   },
@@ -55,7 +55,7 @@ export const projects = [
     id: "braincost",
     name: "BrainCost",
     blurb:
-      "Clinical-note analysis that estimates healthcare resource cost, comparing classic baselines against transformer models.",
+      "Clinical note analysis that estimates healthcare resource cost, comparing classic baselines against transformer models.",
     stack: ["PyTorch", "scikit-learn", "spaCy"],
     highlight: "Baseline vs. transformer benchmark on real clinical text.",
   },
@@ -63,34 +63,34 @@ export const projects = [
 
 export const education = [
   {
-    school: "Northeastern University — Khoury College",
+    school: "Northeastern University, Khoury College",
     degree: "M.S. in Computer Science",
-    period: "Sep 2025 – May 2027",
+    period: "Sep 2025 to May 2027",
     note: "Focus: data systems, software development, analytics, applied computing.",
   },
   {
     school: "St. Joseph's College of Engineering",
     degree: "B.E. in Computer Science & Engineering",
-    period: "2021 – 2025",
+    period: "2021 to 2025",
     note: "Joint Secretary, CSI Chennai Chapter.",
   },
 ];
 
 export const experience = [
   {
-    title: "Event Manager — Cryptrix'24",
+    title: "Event Manager, Cryptrix'24",
     period: "2024",
     note: "Led 20+ volunteers to run a national symposium with 500+ participants.",
   },
   {
-    title: "Web Development Intern — ANJUSOFT",
+    title: "Web Development Intern, ANJUSOFT",
     period: "2023",
-    note: "Built internal and client-facing web features.",
+    note: "Built internal and client facing web features.",
   },
 ];
 
 export const achievements = [
-  "Co-authored an IoT research paper, presented at ICSTSDG 2024.",
+  "Coauthored an IoT research paper, presented at ICSTSDG 2024.",
   "Smart India Hackathon Finalist (2022 & 2024).",
 ];
 
