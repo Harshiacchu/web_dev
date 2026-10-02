@@ -1067,135 +1067,210 @@ a {
   transform-origin: center;
 }
 
-.runner-body {
+/* ---- Chibi runner: avatar face on a real little running body ---- */
+.runner-char {
   position: relative;
-  width: 46px;
-  height: 46px;
+  width: 48px;
+  height: 64px;
 }
 
-.runner-head {
-  position: relative;
-  z-index: 2;
-  display: block;
-  width: 46px;
-  height: 46px;
+/* Ground shadow */
+.rc-shadow {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 34px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(20, 42, 33, 0.3);
+  transform: translateX(-50%);
+  filter: blur(1px);
+  z-index: 0;
+}
+
+/* Head = the avatar */
+.rc-head {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 40px;
+  height: 40px;
+  transform: translateX(-50%);
   border-radius: 50%;
   object-fit: cover;
   border: 2px solid var(--cream);
-  box-shadow: 0 4px 12px rgba(20, 42, 33, 0.4);
+  box-shadow: 0 3px 9px rgba(20, 42, 33, 0.35);
+  z-index: 4;
 }
 
-.runner-leg,
-.runner-arm {
+/* Torso / outfit */
+.rc-torso {
   position: absolute;
-  border-radius: 4px;
+  left: 50%;
+  top: 33px;
+  width: 26px;
+  height: 24px;
+  transform: translateX(-50%);
+  border-radius: 11px 11px 9px 9px;
+  background: linear-gradient(160deg, var(--forest-soft), var(--forest));
+  box-shadow: inset 0 -3px 6px rgba(0, 0, 0, 0.18);
+  z-index: 2;
+}
+
+/* A small gold collar detail */
+.rc-torso::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 2px;
+  width: 12px;
+  height: 4px;
+  border-radius: 0 0 6px 6px;
+  background: var(--gold);
+  transform: translateX(-50%);
+}
+
+.rc-arm,
+.rc-leg {
+  position: absolute;
   transform-origin: top center;
 }
 
-.runner-leg {
-  top: 42px;
-  width: 6px;
+/* Arms (sleeve + hand) */
+.rc-arm {
+  top: 36px;
+  width: 8px;
   height: 16px;
-  background: var(--walnut);
+  border-radius: 5px;
+  background: linear-gradient(var(--sage), var(--forest-soft));
 }
 
-.runner-leg-back {
-  left: 18px;
-  background: var(--forest);
-}
-
-.runner-leg-front {
-  left: 24px;
-}
-
-.runner-arm {
-  top: 22px;
-  width: 6px;
-  height: 14px;
-  background: var(--forest-soft);
-  z-index: 3;
-}
-
-.runner-arm-back {
-  left: 8px;
-  background: var(--forest);
-  z-index: 1;
-}
-
-.runner-arm-front {
-  left: 34px;
-}
-
-.runner-board {
+.rc-arm::after {
+  content: "";
   position: absolute;
   left: 50%;
-  top: 58px;
-  width: 56px;
-  height: 8px;
-  border-radius: 6px;
-  background: linear-gradient(90deg, var(--gold), var(--gold-bright));
-  box-shadow: 0 6px 14px rgba(20, 42, 33, 0.3);
+  bottom: -3px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #d8a98a;
   transform: translateX(-50%);
-  animation: board-hover 1.3s ease-in-out infinite;
+}
+
+.rc-arm-back {
+  left: 9px;
+  z-index: 1;
+  background: linear-gradient(var(--forest), var(--forest-deep));
+}
+
+.rc-arm-front {
+  left: 31px;
+  z-index: 5;
+}
+
+/* Legs (trousers + sneaker) */
+.rc-leg {
+  top: 54px;
+  width: 9px;
+  height: 15px;
+  border-radius: 5px;
+  background: linear-gradient(#3a4f43, #2c3d34);
+}
+
+.rc-shoe {
+  position: absolute;
+  left: 50%;
+  bottom: -4px;
+  width: 12px;
+  height: 7px;
+  border-radius: 4px 7px 4px 4px;
+  background: var(--cream);
+  transform: translateX(-50%);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+}
+
+.rc-leg-back {
+  left: 15px;
+  z-index: 1;
+  filter: brightness(0.9);
+}
+
+.rc-leg-front {
+  left: 24px;
+  z-index: 3;
 }
 
 .runner-dust {
   position: absolute;
-  left: -4px;
-  top: 54px;
+  left: 8px;
+  top: 60px;
   width: 10px;
   height: 10px;
   border-radius: 50%;
   background: color-mix(in srgb, var(--sand) 80%, transparent);
   opacity: 0;
+  z-index: 0;
 }
 
-/* Limb motion only plays while the buddy is actually running. */
-.runner.is-running .runner-body {
-  animation: run-bob 0.36s ease-in-out infinite;
+/* Idle: a gentle breathing bob so the buddy feels alive while standing. */
+.runner-char {
+  animation: rc-idle 2.6s ease-in-out infinite;
 }
 
-.runner.is-running .runner-leg-front {
-  animation: swing-a 0.36s linear infinite;
+@keyframes rc-idle {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-1.5px);
+  }
 }
 
-.runner.is-running .runner-leg-back {
-  animation: swing-b 0.36s linear infinite;
+/* Run cycle — only while actually moving. */
+.runner.is-running .runner-char {
+  animation: rc-bob 0.34s ease-in-out infinite;
 }
 
-.runner.is-running .runner-arm-front {
-  animation: swing-b 0.36s linear infinite;
+.runner.is-running .rc-leg-front,
+.runner.is-running .rc-arm-back {
+  animation: rc-swing-a 0.34s linear infinite;
 }
 
-.runner.is-running .runner-arm-back {
-  animation: swing-a 0.36s linear infinite;
+.runner.is-running .rc-leg-back,
+.runner.is-running .rc-arm-front {
+  animation: rc-swing-b 0.34s linear infinite;
+}
+
+.runner.is-running .rc-shadow {
+  animation: rc-shadow 0.34s ease-in-out infinite;
 }
 
 .runner.is-running .runner-dust {
-  animation: dust-puff 0.5s linear infinite;
+  animation: rc-dust 0.5s linear infinite;
 }
 
-@keyframes swing-a {
+@keyframes rc-swing-a {
   0%,
   100% {
-    transform: rotate(32deg);
+    transform: rotate(34deg);
   }
   50% {
-    transform: rotate(-32deg);
+    transform: rotate(-34deg);
   }
 }
 
-@keyframes swing-b {
+@keyframes rc-swing-b {
   0%,
   100% {
-    transform: rotate(-32deg);
+    transform: rotate(-34deg);
   }
   50% {
-    transform: rotate(32deg);
+    transform: rotate(34deg);
   }
 }
 
-@keyframes run-bob {
+@keyframes rc-bob {
   0%,
   100% {
     transform: translateY(0);
@@ -1205,24 +1280,24 @@ a {
   }
 }
 
-@keyframes board-hover {
+@keyframes rc-shadow {
   0%,
   100% {
-    transform: translateX(-50%) translateY(0);
+    transform: translateX(-50%) scaleX(1);
   }
   50% {
-    transform: translateX(-50%) translateY(2px);
+    transform: translateX(-50%) scaleX(0.82);
   }
 }
 
-@keyframes dust-puff {
+@keyframes rc-dust {
   0% {
-    opacity: 0.5;
-    transform: translate(0, 0) scale(0.6);
+    opacity: 0.45;
+    transform: translate(0, 0) scale(0.5);
   }
   100% {
     opacity: 0;
-    transform: translate(-16px, -4px) scale(1.3);
+    transform: translate(-14px, -3px) scale(1.2);
   }
 }
 

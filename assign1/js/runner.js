@@ -14,15 +14,16 @@ function buildDom() {
   runner.setAttribute("aria-hidden", "true");
   runner.innerHTML = `
     <div class="runner-sprite">
-      <div class="runner-dust"></div>
-      <div class="runner-body">
-        <span class="runner-arm runner-arm-back"></span>
-        <span class="runner-leg runner-leg-back"></span>
-        <span class="runner-leg runner-leg-front"></span>
-        <img class="runner-head" src="./images/avatar.jpg" alt="" width="46" height="46" />
-        <span class="runner-arm runner-arm-front"></span>
+      <div class="runner-char">
+        <span class="rc-shadow"></span>
+        <span class="rc-arm rc-arm-back"></span>
+        <span class="rc-leg rc-leg-back"><span class="rc-shoe"></span></span>
+        <span class="rc-leg rc-leg-front"><span class="rc-shoe"></span></span>
+        <span class="rc-torso"></span>
+        <img class="rc-head" src="./images/avatar.jpg" alt="" width="40" height="40" />
+        <span class="rc-arm rc-arm-front"></span>
+        <span class="runner-dust"></span>
       </div>
-      <div class="runner-board"></div>
     </div>`;
 
   const toggle = document.createElement("button");
