@@ -1,75 +1,81 @@
-# CS5610: HTML, CSS & JavaScript Self-Assessment
+# HTML, CSS and JavaScript Self Assessment
 
-**Course:** CS5610 Web Development (Northeastern University)  
 **Author:** Harshitha Seetharaman  
+**Course:** CS5610 Web Development (Northeastern University)  
 **Repository:** [Harshiacchu/web_dev](https://github.com/Harshiacchu/web_dev)  
-**Submission Focus:** Vanilla HTML5, CSS3 Architecture, Box Model Dynamics, Typographic Scales, and CSS Positioning Systems
+**Topic:** Vanilla HTML5, CSS3 Architecture, Box Model Dynamics, Typographic Scales, and CSS Positioning
 
----
+## About This Project
 
-## 📖 Executive Overview
+For this self assessment, I built a complete web page using pure vanilla HTML, modern CSS, and lightweight JavaScript without relying on any external CSS frameworks or libraries. The goal was to practice and self assess core web fundamentals: creating semantic document outlines, understanding search engine optimization, experimenting with layout flow without stylesheets, dissecting the CSS box model, comparing font sizing units, and mastering CSS positioning contexts.
 
-This repository houses the complete implementation for the **HTML + CSS + JavaScript Self-Assessment**. Built entirely with vanilla web technologies, this project explores foundational web development principles through working demonstrations, code experiments, and structured technical explanations.
+I styled the interface using an editorial black and white chessboard palette, keeping navigation slim and ensuring the page adapts cleanly across different window sizes and heights.
 
-The assessment is organized into clear semantic sections fulfilling every rubric item, designed for peer review, live presentation, and production-grade accessibility.
+## 1. Webpage Architecture and Top 10 HTML Tags
 
----
+### Page Layout
+The document is structured using standard HTML5 semantic elements:
+1. `<nav>` for the compact top navigation bar with quick jump links and theme toggle.
+2. `<main>` containing exactly one primary `<h1>` heading (`HTML, CSS & JavaScript Self-Assessment`) and four distinct `<h2>` section headers.
+3. `<section>` containers grouping each conceptual topic.
+4. `<footer>` at the base of the page, anchored using flexbox layout.
 
-## 🎯 Detailed Assessment Responses & Architecture
+### My 10 Most Useful HTML Tags in Daily Development
 
-### 1. HTML Architecture & The 10 Most Useful Tags
+1. **`<div>` (Block Container):** The universal layout element. I use divs as flexible containers, flex/grid wrappers, and JavaScript DOM hooks when no specific semantic element applies, keeping the structure clean without confusing screen readers.
+2. **`<span>` (Inline Container):** The inline equivalent of a div. It lets me style specific words, add status pills, attach icons, or dynamically update numbers inside a paragraph without breaking the text onto a new line.
+3. **`<a>` (Anchor / Link):** The backbone of the entire web. It enables page-to-page routing, external referencing, jump anchors within the page, and email or phone triggers.
+4. **`<button>` (Interactive Button):** Essential for accessible user interactions. Unlike styling a clickable div, native buttons include built-in keyboard support (`Enter` and `Space`), focus rings, tab ordering, and disabled state handling automatically.
+5. **`<input>` (Form Input):** The primary tool for collecting user input. With modern types like text, email, number, checkbox, and range, browsers provide built-in validation and mobile-friendly keyboards automatically.
+6. **`<form>` (Form Container):** Wraps related input fields into a single submission unit. It enables HTML5 form validation, handles standard Enter-key submission events, and simplifies data extraction via `FormData` in JavaScript.
+7. **`<nav>`, `<main>`, `<section>`, `<footer>` (Semantic Landmarks):** Critical for web accessibility. These tags allow assistive technologies and screen readers to map out the page structure so users can easily skip directly to the content they want.
+8. **`<img>` and `<picture>` (Media Elements):** Embeds visual content with support for `alt` descriptions for screen readers and search crawlers, `loading="lazy"` for fast initial page loads, and `srcset` for responsive images.
+9. **`<ul>`, `<ol>` and `<li>` (Structured Lists):** Provides structured list semantics. Screen readers announce list lengths upfront (such as *"List of 6 items"*), giving users clear context when browsing menus, features, or instructions.
+10. **`<script>` and `<link>` (Resource Connectors):** The bridge elements connecting our HTML markup to external CSS stylesheets, Google Fonts, metadata declarations, and JavaScript application logic.
 
-#### Page Architecture:
-- **Semantic Structure:** Implemented with `<nav>`, `<main>`, `<section>`, and `<footer>` landmark tags.
-- **Heading Hierarchy:** Exactly **one primary `<h1>`** (`HTML, CSS & JavaScript Self-Assessment`) and **four distinct `<h2>` subheaders** mapping to the core conceptual domains.
+## 2. SEO Research and Important Header Tags
 
-#### Top 10 Most Indispensable HTML Tags (with Developer Rationale):
+Search Engine Optimization (SEO) is the process of structuring and annotating a website so search engines like Googlebot and Bingbot can accurately discover, index, rank, and display rich previews of your pages. When a web crawler visits a website, it inspects the `<head>` metadata before rendering the DOM. Proper header tags create a clear contract between your code and search indexing algorithms.
 
-1. **`<div>` (Block Container):** The universal layout workhorse. Used as an un-opinionated styling boundary, Flexbox/Grid wrapper, or JavaScript DOM hook without imposing inaccurate semantic meaning on assistive technologies.
-2. **`<span>` (Inline Phrasing Container):** The inline counterpart to `<div>`. Enables targeted micro-styling, badge rendering, icon attachment, or reactive text updates within a flowing paragraph without triggering unwanted line breaks.
-3. **`<a>` (Anchor / Hyperlink):** The defining element of the World Wide Web. Powers navigation between local routes, external domains, anchor jumps (`#section-id`), email clients (`mailto:`), and downloadable files.
-4. **`<button>` (Interactive Control):** Crucial for accessible UI interaction. Unlike a clickable `<div>`, a native `<button>` provides built-in keyboard accessibility (`Enter` and `Space` key handlers), focus management, tab order, and disabled states out of the box.
-5. **`<input>` (Data Capture Gateway):** Enables versatile user input collection. Leveraging modern `type` attributes (`text`, `email`, `number`, `range`, `checkbox`) unlocks native browser validation and mobile-optimized soft keyboards.
-6. **`<form>` (Input Encapsulation):** Binds interactive input controls into a unified data submission context, enabling native HTML5 validation constraints, standard form serialization (`FormData`), and keyboard-driven `Enter` submissions.
-7. **`<nav>`, `<main>`, `<section>`, `<footer>` (Semantic Landmarks):** Invaluable for web accessibility (WCAG). These landmarks allow screen reader users to skip redundant navigation and jump directly to relevant content regions.
-8. **`<img>` / `<picture>` (Responsive Media):** Renders visual graphics while supporting vital performance and accessibility attributes such as `alt` text for screen readers/SEO, `loading="lazy"` for bandwidth optimization, and `srcset` for high-DPI displays.
-9. **`<ul>` / `<ol>` + `<li>` (Structured Lists):** Provides structured list semantics. Assistive tools announce list lengths (e.g., "List of 6 items"), creating predictable mental models for menus, step-by-step workflows, and itemized features.
-10. **`<script>` & `<link>` (External Resource Integrators):** The essential bridges that connect structural HTML to external stylesheets, typography fonts, and asynchronous JavaScript logic modules.
+### Essential Header Tags for SEO
 
----
+1. **`<title>Page Title | Brand</title>`**  
+   *Role:* Displays as the clickable blue title in Google search results and browser tab names. This is the single most heavily weighted on-page ranking signal.
 
-### 2. Search Engine Optimization (SEO) & Essential Header Tags
+2. **`<meta name="description" content="...">`**  
+   *Role:* Provides the summary text snippet shown underneath the title in search engine results pages. A compelling description directly increases organic click-through rates.
 
-#### SEO Foundations & Web Crawler Mechanics:
-Search Engine Optimization (SEO) ensures that automated crawlers (such as Googlebot, Bingbot, and social media scrapers) can discover, parse, categorize, and rank a website. The `<head>` element serves as the primary metadata contract between developer code and search algorithms.
+3. **`<meta name="viewport" content="width=device-width, initial-scale=1.0">`**  
+   *Role:* Tells mobile browsers how to scale the viewport. Google uses Mobile-First indexing, meaning pages missing this tag fail mobile-friendly tests and get penalized in rankings.
 
-#### Key Header / `<head>` Tags for SEO:
+4. **`<link rel="canonical" href="...">`**  
+   *Role:* Declares the definitive, authoritative URL for a page. This consolidates search ranking signals and prevents duplicate content penalties when the same page is accessible via multiple URLs or query parameters.
 
-| Tag / Syntax | Primary Function | SEO & User Impact |
-| :--- | :--- | :--- |
-| `<title>Page Title \| Brand</title>` | SERP Blue Headline | **Critical (Rank Factor #1):** Primary ranking signal and clickable SERP title. |
-| `<meta name="description" content="...">` | SERP Snippet Text | **Critical (CTR #1):** Dictates click-through rate from search result pages. |
-| `<meta name="viewport" content="width=device-width, initial-scale=1.0">` | Responsive Viewport | **Critical (Mobile Indexing):** Required for Google's Mobile-First indexing algorithms. |
-| `<link rel="canonical" href="...">` | Canonical Authority | **High:** Consolidates ranking signals and prevents duplicate content penalties. |
-| `<meta name="robots" content="index, follow">` | Crawler Directives | **High:** Explicitly commands bots to index pages and follow page links. |
-| `<meta property="og:title">` & `<og:image">` | Open Graph Social Cards | **High:** Powers rich visual cards on LinkedIn, Slack, Twitter, and messaging apps. |
-| `<script type="application/ld+json">` | Schema.org Structured Data | **High:** Enables Google Rich Results (star ratings, event dates, author cards, FAQs). |
-| `<meta charset="UTF-8">` | Character Encoding | **Fundamental:** Prevents garbled text rendering across international character sets. |
+5. **`<meta name="robots" content="index, follow">`**  
+   *Role:* Gives explicit instructions to web robots on whether to index the page and whether to follow outbound links.
 
----
+6. **`<meta property="og:title">`, `<meta property="og:description">`, `<meta property="og:image">` (Open Graph)**  
+   *Role:* Social sharing tags that generate rich visual link preview cards when URLs are shared on platforms like LinkedIn, Slack, Twitter, and iMessage.
 
-### 3. Pure HTML 3×3 Grid (Strictly Zero CSS & Zero `<table>`)
+7. **`<script type="application/ld+json">` (Structured Schema Data)**  
+   *Role:* Provides machine-readable structured JSON data following Schema.org standards. This enables Google Rich Snippets such as star ratings, breadcrumb trails, FAQs, and author information directly in search results.
 
-#### The Architectural Challenge:
-Create a 3×3 grid matrix using strictly `<div>` and `<span>` elements—with **no CSS styling** (no classes, no inline styles, no stylesheet rules) and **no `<table>` tags**.
+8. **`<meta charset="UTF-8">`**  
+   *Role:* Declares standard character encoding, ensuring emojis, accents, and multilingual text render correctly without broken character symbols.
 
-#### Mechanism & Code:
-In native browser User-Agent stylesheets:
-- `<div>` elements are intrinsic **block-level** elements (`display: block`), which naturally cause vertical line breaks and stack row-by-row.
-- `<span>` elements are intrinsic **inline** elements (`display: inline`), which naturally flow horizontally side-by-side on the same line.
+## 3. Pure HTML 3x3 Grid Without CSS and Without Tables
 
-By nesting three `<span>` elements (columns) inside each of three `<div>` elements (rows), a clean 3×3 grid is produced purely via native HTML formatting contexts:
+### The Challenge
+Build a functional 3x3 grid layout using only `<div>` and `<span>` tags, strictly with zero CSS styling (no classes, no inline styles, no external stylesheets) and without using `<table>` elements.
 
+### How It Works
+Browsers have built-in User Agent stylesheets that define default display behaviors for HTML elements:
+1. `<div>` is an intrinsic block-level element (`display: block`). Each div starts on a fresh line and takes up full width, acting naturally as a vertical row.
+2. `<span>` is an intrinsic inline element (`display: inline`). Spans sit horizontally side-by-side on the same line, acting naturally as horizontal columns.
+
+By placing three `<span>` elements inside each of three `<div>` elements, we get three rows of three columns, forming a natural 3x3 coordinate grid using nothing but default browser document flow.
+
+### Source Code
 ```html
 <!-- Row 1 -->
 <div>
@@ -87,100 +93,80 @@ By nesting three `<span>` elements (columns) inside each of three `<div>` elemen
 </div>
 ```
 
----
+## 4. CSS Box Model Gallery
 
-### 4. CSS Box Model Gallery (3 Rows × 3 Columns)
-
-The CSS Box Model is the structural geometry governing element sizing in CSS:
-1. **Content Box:** The innermost rectangle where text, images, and child components render.
-2. **Padding Box:** The transparent internal clearance space between content and the border.
+The CSS Box Model defines how every rectangular element on a page is sized and spaced:
+1. **Content Box:** The innermost area where text, images, or child elements render.
+2. **Padding Box:** The internal breathing room between the content and the border.
 3. **Border Box:** The perimeter boundary stroke surrounding the padding.
-4. **Margin Box:** The external clearance zone separating the element from neighboring siblings.
+4. **Margin Box:** The external clearance zone separating the element from neighboring elements.
 
-#### Gallery Matrix Layout:
-- **Row 1 (Padding Variations):** `padding: 0px` vs `padding: 10px` vs `padding: 24px` (demonstrating internal breathing room).
-- **Row 2 (Border Variations):** `border: 0px` vs `border: 4px solid #38bdf8` vs `border: 8px dashed #a855f7` (demonstrating boundary strokes).
-- **Row 3 (Margin Variations):** `margin: 0px` vs `margin: 12px` vs `margin: 24px` (demonstrating external component separation).
+### Gallery Structure
+In section 4.1 of the page, I built a 3x3 gallery demonstrating row-by-row property variations with three distinct values (0px, 10px, and 24px) using an editorial high-contrast black and white visual style:
+1. **Row 1 (Padding Variations):** Shows `padding: 0px` (content touching border) vs `padding: 10px` (moderate clearance) vs `padding: 24px` (generous card padding).
+2. **Row 2 (Border Variations):** Shows `border: 0px` (frameless) vs `border: 4px solid` (medium frame) vs `border: 8px dashed` (heavy dashed border).
+3. **Row 3 (Margin Variations):** Shows `margin: 0px` (flush to container) vs `margin: 12px` (standard gap) vs `margin: 24px` (wide spatial isolation).
 
----
+## 5. Typographic Scales: 6 Font Sizes via Inline Styles
 
-### 5. Typographic Scales: 6 Font Sizes via Inline Styling
+In section 4.2, I created an itemized list using the exact same sentence across 6 items, with font sizes applied via inline `style="font-size: ..."` declarations to contrast absolute and relative units:
 
-Rendered with the identical test phrase:  
-`"Crafting accessible, beautiful, and performant web interfaces requires understanding foundational building blocks."`
+Test Phrase:  
+*"Crafting accessible, beautiful, and performant web interfaces requires understanding foundational building blocks."*
 
-#### Itemized Breakdown & Unit Rationale:
+1. **`style="font-size: 13px;"` (Pixels - Absolute Unit)**  
+   *When to use with Example:* Pixels represent fixed screen dots (1/96 inch). Best for micro-UI elements where dimensions must never change, such as a 1px border line, a 16px navigation icon, or canvas drawing coordinates.
 
-1. **`style="font-size: 13px;"` — Pixels (`px` - Absolute):**  
-   - *When to use:* Fixed micro-UI elements such as 1px border dividers, pixel-perfect 16px icon badges, or canvas render targets where dimensions must remain locked regardless of root text changes.
-2. **`style="font-size: 1.125rem;"` — Root EM (`rem` - Relative):**  
-   - *When to use:* Body copy, article paragraphs, and responsive typography scales. Scales relative to the browser root `<html>` font size (default 16px), preserving user accessibility preferences when users adjust browser base font sizes.
-3. **`style="font-size: 1.35em;"` — Element EM (`em` - Relative):**  
-   - *When to use:* Self-contained UI components (buttons, input fields, badges) where padding, icon sizes, and text should scale harmoniously whenever the parent component size is adjusted.
-4. **`style="font-size: 1.6vw;"` — Viewport Width (`vw` - Relative):**  
-   - *When to use:* Fluid hero banners and editorial headlines (often wrapped with `clamp(1.5rem, 3vw, 4rem)`), smoothly scaling typography across viewport widths without dozens of media queries.
-5. **`style="font-size: 135%;"` — Percentage (`%` - Relative):**  
-   - *When to use:* Relative typography adjustments within a parent component hierarchy or on root elements (`html { font-size: 62.5%; }`) to simplify baseline rem calculations.
-6. **`style="font-size: 18pt;"` — Points (`pt` - Absolute):**  
-   - *When to use:* Physical print stylesheets (`@media print`) and PDF invoice generators (1pt = 1/72 inch), guaranteeing exact physical paper dimensions across all printer hardware.
+2. **`style="font-size: 1.125rem;"` (Root EM - Relative to Root)**  
+   *When to use with Example:* Scales relative to the `<html>` root font size (default 16px). This is the best choice for body copy and general paragraphs. For accessibility, if a visually impaired user increases their browser default font size to 24px, all `rem` values scale up proportionally without breaking the layout.
 
----
+3. **`style="font-size: 1.35em;"` (Element EM - Relative to Parent)**  
+   *When to use with Example:* Scales relative to the immediate parent element's font size. Ideal for self-contained UI components like buttons and tooltips. For instance, a button with `font-size: 1.35em; padding: 0.5em 1em;` automatically scales its padding and text together when placed in a larger container.
 
-### 6. Creative CSS Positioning Studio & Sticky Bottom Footer
+4. **`style="font-size: 1.6vw;"` (Viewport Width - Relative to Screen)**  
+   *When to use with Example:* Represents 1% of the browser viewport width. Great for fluid hero headlines (like `clamp(1.5rem, 3vw, 4rem)`) so titles expand and contract smoothly with window resizing without needing multiple media queries.
 
-#### 4 Fundamental Positioning Modes:
-1. **`position: static;` (Default Document Flow):** Normal sequential block/inline layout. Coordinates (`top`, `left`, `z-index`) are ignored.
-2. **`position: relative;` (Offset & Coordinate Anchor):** Stays within normal flow while allowing micro-offsets (`top`/`left`), serving as the coordinate origin `(0,0)` for nested `absolute` children.
-3. **`position: absolute;` (Detached Coordinate Placement):** Removed from normal flow and positioned relative to the nearest positioned ancestor. Used for notification badges, dropdown menus, and modal dialogs.
-4. **`position: fixed;` (Viewport Pinning):** Anchored directly to viewport window coordinates. Used for the persistent top navigation bar and floating back-to-top action button.
+5. **`style="font-size: 135%;"` (Percentage - Relative to Parent)**  
+   *When to use with Example:* Scales as a direct percentage of inherited parent text size. Useful for subheadings or introductory lead paragraphs in articles where you want to emphasize text relative to the surrounding copy.
 
-#### Bottom-Anchored Footer Architecture:
-To guarantee that the footer stays securely at the bottom of the screen on both short viewports and long scrolling pages:
-```css
-/* Body flex column container */
-body {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
+6. **`style="font-size: 18pt;"` (Points - Absolute Print Unit)**  
+   *When to use with Example:* Points are physical typography units (1pt = 1/72 inch). While avoided on responsive screens, `pt` is the industry standard for print stylesheets (`@media print`) and PDF invoice generation to ensure exact physical print sizing across different printers.
 
-/* Main expands to absorb empty vertical space */
-.main-content {
-  flex: 1 0 auto;
-}
+## 6. Creative CSS Positioning and Bottom Footer
 
-/* Footer anchors cleanly to bottom */
-.site-footer {
-  position: sticky;
-  bottom: 0;
-  margin-top: auto;
-}
-```
+In section 4.3, I created an interactive positioning studio showcasing the 4 main CSS positioning models:
 
----
+1. **`position: static;` (Default Document Flow):** Normal sequential block and inline layout. Offsets (`top`, `left`) and `z-index` have no effect. Used for standard body text, standard cards, and typical content sections.
+2. **`position: relative;` (In-Flow Offset and Coordinate Anchor):** Stays in document flow while allowing micro-offsets (`top`, `left`) without disturbing siblings. Crucially, it serves as the coordinate origin `(0,0)` for nested `absolute` children.
+3. **`position: absolute;` (Detached Coordinate Placement):** Removed completely from document flow and placed relative to its closest positioned ancestor. Used for floating notification badges, corner ribbons, tooltips, and modal dropdowns.
+4. **`position: fixed;` (Viewport Pinning):** Pinned directly to screen viewport coordinates and stays in place during scrolling. Used for the slim top navigation header and the floating Back to Top button.
 
-## 🚀 Running the Project Locally
+### How the Footer Stays at the Bottom
+To ensure the footer stays anchored at the bottom on short pages while resting naturally at the end of long scrolling pages:
+1. The `<body>` uses flex column layout: `min-height: 100vh; display: flex; flex-direction: column;`.
+2. The `<main>` container has `flex: 1 0 auto;`, which automatically expands to fill any remaining vertical space and pushes the footer to the bottom.
+3. The `<footer>` uses `margin-top: auto;` to sit securely at the bottom without blocking or floating over content during scrolling.
 
-No build tools, npm packages, or bundlers required.
+## Running the Project Locally
 
+No build steps or dependencies required.
+
+### Option 1: Direct File Open
+Open `assign3/index.html` directly in any web browser.
+
+### Option 2: Local HTTP Server
+Run any local static server from the project directory:
 ```bash
-# Option 1: Open directly in your default browser
-open /Users/harshithaseetharaman/Documents/NEU/web_dev/web_dev/assign3/index.html
-
-# Option 2: Run with any local HTTP server
-npx serve /Users/harshithaseetharaman/Documents/NEU/web_dev/web_dev/assign3
-# or
-python3 -m http.server 8080 --directory /Users/harshithaseetharaman/Documents/NEU/web_dev/web_dev/assign3
+python3 -m http.server 3008 --directory /Users/harshithaseetharaman/Documents/NEU/web_dev/web_dev/assign3
 ```
+Then visit `http://localhost:3008/` in your browser.
 
----
+## Peer Review Checklist
 
-## 📋 Peer Review & Verification Checklist
-
-- [x] Semantic layout featuring `<nav>`, `<main>` with 1 `<h1>` & 4 `<h2>` sections, and `<footer>`.
-- [x] Top 10 useful HTML tags with clear practical explanations.
-- [x] Comprehensive SEO research and `<head>` tag impact breakdown with JSON-LD schema.
-- [x] Pure HTML 3×3 grid built without `<table>` and without any CSS.
-- [x] 3×3 CSS Box Model Gallery varying border, margin, and padding across columns.
-- [x] Itemized 6-font-size list using inline styles with absolute & relative unit analysis.
-- [x] Creative 4-mode CSS positioning demonstration studio with guaranteed bottom sticky footer.
+1. Semantic HTML layout with navbar, main content with 1 H1 and 4 H2 sections, and footer.
+2. Top 10 useful HTML tags with clear practical explanations and use cases.
+3. In-depth SEO research covering header tags, crawler behavior, and JSON-LD schema markup.
+4. Pure HTML 3x3 grid created with only divs and spans without any CSS or tables.
+5. CSS Box Model Gallery varying padding, border, and margin across 3 rows and 3 columns.
+6. 6-item font size list with inline styles, comparing absolute and relative units with examples.
+7. Creative 4-mode CSS positioning demonstration studio with non-intrusive bottom-anchored footer.
