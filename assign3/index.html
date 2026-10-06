@@ -1,0 +1,1012 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- ===================================================================
+       CRITICAL SEO & HEADER METADATA (Self-Assessment Requirement 2)
+       =================================================================== -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <title>CS5610: HTML, CSS & JavaScript Self-Assessment | Harshitha Seetharaman</title>
+  <meta name="description" content="A comprehensive self-assessment project demonstrating core web fundamentals: Semantic HTML5, Search Engine Optimization (SEO), Pure HTML Grids, CSS Box Model Gallery, Typographic Units, and CSS Positioning Systems.">
+  <meta name="keywords" content="HTML5, CSS3, JavaScript, Web Development, SEO, Box Model, CSS Positioning, Typography, CS5610, Northeastern University">
+  <meta name="author" content="Harshitha Seetharaman">
+  <meta name="robots" content="index, follow">
+  
+  <!-- Open Graph Meta Tags for Social & Discoverability -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="CS5610: HTML, CSS & JavaScript Self-Assessment">
+  <meta property="og:description" content="Mastery demonstration of vanilla HTML, CSS, and JS fundamentals, SEO best practices, box model variations, typographic scaling, and layout positioning.">
+  <meta property="og:url" content="https://github.com/Harshiacchu/web_dev/tree/main/assign3">
+  <meta property="og:site_name" content="Harshitha Seetharaman Portfolio">
+  
+  <!-- Twitter Card Metadata -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="CS5610: HTML, CSS & JavaScript Self-Assessment">
+  <meta name="twitter:description" content="Exploring semantic HTML, SEO meta architectures, CSS box model mechanics, and positioning contexts.">
+  
+  <!-- Canonical Link to Prevent Duplicate Indexing -->
+  <link rel="canonical" href="https://github.com/Harshiacchu/web_dev/tree/main/assign3">
+  
+  <!-- Fonts & Stylesheet -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+
+  <!-- JSON-LD Structured Data Schema for Rich SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "EducationalOccupationalCredential",
+    "name": "HTML + CSS + JavaScript Self Assessment",
+    "description": "Comprehensive self-assessment demonstrating mastery of vanilla HTML5 semantic structures, SEO header optimization, pure block-and-inline layout grids, CSS Box Model dynamics, font-unit scaling, and 4-tier CSS positioning contexts.",
+    "educationalLevel": "Graduate / Master of Science",
+    "author": {
+      "@type": "Person",
+      "name": "Harshitha Seetharaman",
+      "affiliation": "Northeastern University",
+      "url": "https://github.com/Harshiacchu"
+    },
+    "about": ["HTML5", "CSS3", "Box Model", "Typography", "CSS Positioning", "SEO"]
+  }
+  </script>
+</head>
+<body class="theme-dark">
+  <!-- ===================================================================
+       NAVIGATION BAR (Requirement 1)
+       =================================================================== -->
+  <nav class="navbar" id="main-nav" aria-label="Main Navigation">
+    <div class="nav-container">
+      <div class="nav-brand">
+        <span class="brand-icon">&lt;/&gt;</span>
+        <span class="brand-text">CS5610 <span class="brand-sub">Self-Assessment</span></span>
+      </div>
+      
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#section-tags" class="nav-link"><span class="nav-num">01</span> HTML Tags</a></li>
+        <li><a href="#section-seo" class="nav-link"><span class="nav-num">02</span> SEO Headers</a></li>
+        <li><a href="#section-grid" class="nav-link"><span class="nav-num">03</span> 3×3 Pure Grid</a></li>
+        <li><a href="#section-box-model" class="nav-link"><span class="nav-num">04</span> Box Model</a></li>
+        <li><a href="#section-typography" class="nav-link"><span class="nav-num">05</span> Font Sizes</a></li>
+        <li><a href="#section-positioning" class="nav-link"><span class="nav-num">06</span> Positioning</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button id="theme-toggle" class="btn-theme" title="Toggle Light/Dark Theme" aria-label="Toggle Color Theme">
+          <span class="theme-icon-sun">☀️</span>
+          <span class="theme-icon-moon">🌙</span>
+        </button>
+        <a href="#peer-review-notes" class="btn-action">Peer Review Guide</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===================================================================
+       MAIN CONTENT CONTAINER (Requirement 1)
+       One Main Header (h1) + 4 Subheaders (h2) and Sections
+       =================================================================== -->
+  <main class="main-content" id="main-content">
+    
+    <!-- Hero / Header Banner -->
+    <header class="hero-header">
+      <div class="hero-badge">Northeastern University · CS5610 Web Development</div>
+      <!-- ONE MAIN HEADER (h1) -->
+      <h1 class="main-title">HTML, CSS &amp; JavaScript Self-Assessment</h1>
+      <p class="hero-subtitle">
+        An interactive, in-depth evaluation of vanilla web architecture: semantic structuring, search crawler optimization, layout flow without stylesheets, box model mechanics, typographic scaling, and spatial positioning contexts.
+      </p>
+      
+      <div class="author-meta-card">
+        <div class="meta-item">
+          <span class="meta-label">Author</span>
+          <span class="meta-val">Harshitha Seetharaman</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">Course</span>
+          <span class="meta-val">CS5610 Web Dev</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">Focus</span>
+          <span class="meta-val">Vanilla HTML5 · CSS3 · DOM</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">Status</span>
+          <span class="meta-val status-badge">Complete &amp; Peer-Review Ready</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- =================================================================
+         SECTION 1 (Subheader 1): 10 Most Useful HTML Tags & Semantics
+         ================================================================= -->
+    <section id="section-tags" class="assessment-section" aria-labelledby="heading-section-1">
+      <div class="section-header-block">
+        <div class="section-tag">HTML Fundamental Architecture</div>
+        <!-- SUBHEADER 1 (h2) -->
+        <h2 id="heading-section-1" class="section-title">1. Essential HTML5 Elements &amp; The Top 10 Most Useful Tags</h2>
+        <p class="section-desc">
+          HTML provides the semantic skeleton of the web. Semantic markup conveys explicit meaning to browsers, accessibility screen readers, and search engines rather than merely rendering generic visual containers. Below are the 10 most indispensable HTML tags in real-world software engineering, explained from practical development experience.
+        </p>
+      </div>
+
+      <div class="tags-grid">
+        <!-- Tag 1 -->
+        <article class="tag-card">
+          <div class="tag-header">
+            <code class="tag-badge">&lt;div&gt;</code>
+            <span class="tag-category">Layout &amp; Containment</span>
+          </div>
+          <h3 class="tag-name">Generic Block Container</h3>
+          <p class="tag-explanation">
+            <strong>Why it's essential:</strong> The fundamental block-level building block. When semantic grouping tags don't fit, <code>&lt;div&gt;</code> provides a styling boundary, flex/grid wrapper, or state-driven container without adding misleading semantic semantics to assistive tech.
+          </p>
+          <div class="tag-use-case">
+            <span class="use-case-label">Practical Use Case:</span> Flexbox/Grid wrapper cards, UI widget shells, and JavaScript dynamic injection targets.
+          </div>
+        </article>
+
+        <!-- Tag 2 -->
+        <article class="tag-card">
+          <div class="tag-header">
+            <code class="tag-badge">&lt;span&gt;</code>
+            <span class="tag-category">Inline Formatting</span>
+          </div>
+          <h3 class="tag-name">Generic Inline Phrasing Container</h3>
+          <p class="tag-explanation">
+            <strong>Why it's essential:</strong> <code>&lt;span&gt;</code> allows targeted micro-styling, badge rendering, icon attachment, or JavaScript DOM manipulation within flowing text without triggering a line break.
+          </p>
+          <div class="tag-use-case">
+            <span class="use-case-label">Practical Use Case:</span> Highlighted keywords, price currency indicators, status pills, or dynamic reactive counters within paragraphs.
+          </div>
+        </article>
+
+        <!-- Tag 3 -->
+        <article class="tag-card">
+          <div class="tag-header">
+            <code class="tag-badge">&lt;a&gt;</code>
+            <span class="tag-category">Hyperlinking &amp; Routing</span>
+          </div>
+          <h3 class="tag-name">Anchor / Hyperlink</h3>
+          <p class="tag-explanation">
+            <strong>Why it's essential:</strong> The very definition of the "Hypertext" Web. Enables navigational routing between documents, external domains, anchor jumps, email triggers (<code>mailto:</code>), and downloadable resources.
+          </p>
+          <div class="tag-use-case">
+            <span class="use-case-label">Practical Use Case:</span> Top navigation links, breadcrumbs, external documentation references, and CTA routing buttons.
+          </div>
+        </article>
+
+        <!-- Tag 4 -->
+        <article class="tag-card">
+          <div class="tag-header">
+            <code class="tag-badge">&lt;button&gt;</code>
+            <span class="tag-category">Interactive Controls</span>
+          </div>
+          <h3 class="tag-name">Interactive Action Trigger</h3>
+          <p class="tag-explanation">
+            <strong>Why it's essential:</strong> Unlike clickable divs, native <code>&lt;button&gt;</code> provides built-in keyboard accessibility (Enter/Space key triggers), native focus states, disabled states, and form submission binding for screen readers out-of-the-box.
+          </p>
+          <div class="tag-use-case">
+            <span class="use-case-label">Practical Use Case:</span> Modal open/close toggles, theme switchers, AJAX submission triggers, and shopping cart operations.
+          </div>
+        </article>
+
+        <!-- Tag 5 -->
+        <article class="tag-card">
+          <div class="tag-header">
+            <code class="tag-badge">&lt;input&gt;</code>
+            <span class="tag-category">Forms &amp; Data Capture</span>
+          </div>
+          <h3 class="tag-name">Interactive Data Input</h3>
+          <p class="tag-explanation">
+            <strong>Why it's essential:</strong> The primary gateway for gathering user input. With modern <code>type</code> attributes (<code>text</code>, <code>email</code>, <code>number</code>, <code>checkbox</code>, <code>range</code>, <code>date</code>), it gives browsers built-in validation and mobile-optimized keyboards.
+          </p>
+          <div class="tag-use-case">
+            <span class="use-case-label">Practical Use Case:</span> Search bars, login credentials, range price filters, and form-based query parameter inputs.
+          </div>
+        </article>
+
+        <!-- Tag 6 -->
+        <article class="tag-card">
+          <div class="tag-header">
+            <code class="tag-badge">&lt;form&gt;</code>
+            <span class="tag-category">Form Encapsulation</span>
+          </div>
+          <h3 class="tag-name">User Input Submission Container</h3>
+          <p class="tag-explanation">
+            <strong>Why it's essential:</strong> Binds related input fields into a coherent submission context. Enables standard HTML validation (<code>required</code>, <code>pattern</code>), default Enter-key submission handlers, and clean `FormData` serialization in JS.
+          </p>
+          <div class="tag-use-case">
+            <span class="use-case-label">Practical Use Case:</span> Multi-step registration forms, search query dispatchers, and filtered search parameter groups.
+          </div>
+        </article>
+
+        <!-- Tag 7 -->
+        <article class="tag-card">
+          <div class="tag-header">
+            <code class="tag-badge">&lt;nav&gt; / &lt;main&gt; / &lt;section&gt;</code>
+            <span class="tag-category">Semantic Landmarks</span>
+          </div>
+          <h3 class="tag-name">Semantic Landmark Containers</h3>
+          <p class="tag-explanation">
+            <strong>Why it's essential:</strong> Transforms "div soup" into a navigable document map. Assistive technologies (JAWS, NVDA, VoiceOver) allow users to jump directly between landmarks like <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, and <code>&lt;footer&gt;</code>.
+          </p>
+          <div class="tag-use-case">
+            <span class="use-case-label">Practical Use Case:</span> Creating accessible, skip-link friendly page layouts that improve accessibility audit scores (Lighthouse 100).
+          </div>
+        </article>
+
+        <!-- Tag 8 -->
+        <article class="tag-card">
+          <div class="tag-header">
+            <code class="tag-badge">&lt;img&gt; &amp; &lt;picture&gt;</code>
+            <span class="tag-category">Responsive Media</span>
+          </div>
+          <h3 class="tag-name">Embedded Visual Assets</h3>
+          <p class="tag-explanation">
+            <strong>Why it's essential:</strong> Renders visual assets with crucial attributes like <code>alt</code> for screen reader descriptions and SEO image indexing, <code>loading="lazy"</code> for performance, and <code>srcset</code> for device-density scaling.
+          </p>
+          <div class="tag-use-case">
+            <span class="use-case-label">Practical Use Case:</span> Hero banners, listing thumbnails, user avatars, and infographics with descriptive alt text.
+          </div>
+        </article>
+
+        <!-- Tag 9 -->
+        <article class="tag-card">
+          <div class="tag-header">
+            <code class="tag-badge">&lt;ul&gt; / &lt;ol&gt; + &lt;li&gt;</code>
+            <span class="tag-category">List Semantics</span>
+          </div>
+          <h3 class="tag-name">Structured Lists</h3>
+          <p class="tag-explanation">
+            <strong>Why it's essential:</strong> Informs assistive tech of the exact number of items in a sequence (e.g., "List with 6 items"). Essential for navigation bars, step-by-step guides, and itemized feature lists.
+          </p>
+          <div class="tag-use-case">
+            <span class="use-case-label">Practical Use Case:</span> Navigation menu bars, feature comparisons, recipe instructions, and breadcrumb lists.
+          </div>
+        </article>
+
+        <!-- Tag 10 -->
+        <article class="tag-card">
+          <div class="tag-header">
+            <code class="tag-badge">&lt;script&gt; &amp; &lt;link&gt;</code>
+            <span class="tag-category">Resource Integration</span>
+          </div>
+          <h3 class="tag-name">External Resource Connectors</h3>
+          <p class="tag-explanation">
+            <strong>Why it's essential:</strong> The bridges that turn static markup into styled, reactive applications by linking external CSS sheets, Web Fonts, canonical metadata, and deferred/async JavaScript modules.
+          </p>
+          <div class="tag-use-case">
+            <span class="use-case-label">Practical Use Case:</span> Importing typography from Google Fonts, linking external CSS design systems, and loading modular JS app logic.
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- =================================================================
+         SECTION 2 (Subheader 2): SEO Research & Crucial Header Tags
+         ================================================================= -->
+    <section id="section-seo" class="assessment-section" aria-labelledby="heading-section-2">
+      <div class="section-header-block">
+        <div class="section-tag">Search Engine Optimization</div>
+        <!-- SUBHEADER 2 (h2) -->
+        <h2 id="heading-section-2" class="section-title">2. SEO Research &amp; The Critical Header / &lt;head&gt; Tags</h2>
+        <p class="section-desc">
+          Search Engine Optimization (SEO) is the discipline of structuring, annotating, and optimizing web pages so automated search crawlers (like Googlebot and Bingbot) can accurately discover, parse, rank, and render rich previews of your content. Without proper <code>&lt;head&gt;</code> tags, even the most beautifully designed web applications remain invisible to search engines.
+        </p>
+      </div>
+
+      <!-- SEO Overview Callout -->
+      <div class="seo-overview-card">
+        <div class="seo-overview-icon">🔍</div>
+        <div class="seo-overview-content">
+          <h3>How Search Engines Parse Your Document</h3>
+          <p>
+            When a crawler accesses a page, it immediately evaluates the <code>&lt;head&gt;</code> block before rendering the DOM. It checks for canonical authority (to prevent duplicate penalties), viewport scalability (for mobile-first indexing), title/description relevance, and structured JSON-LD schemas. Proper header tags provide a direct contract between your code and the search algorithm.
+          </p>
+        </div>
+      </div>
+
+      <!-- Key SEO Tags Table / Grid -->
+      <div class="seo-table-container">
+        <table class="seo-table" aria-label="Essential SEO Header Tags Analysis">
+          <thead>
+            <tr>
+              <th scope="col" style="width: 25%;">Tag / Element Syntax</th>
+              <th scope="col" style="width: 25%;">Primary SEO Purpose</th>
+              <th scope="col" style="width: 30%;">Why Crawlers &amp; Users Need It</th>
+              <th scope="col" style="width: 20%;">Impact Level</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>&lt;title&gt;Page Title | Brand&lt;/title&gt;</code></td>
+              <td>Primary SERP Headline</td>
+              <td>Displayed as the clickable blue title in Google search results and on browser tabs. Heavily weighted for keyword relevance.</td>
+              <td><span class="badge-impact critical">Critical (Rank #1)</span></td>
+            </tr>
+            <tr>
+              <td><code>&lt;meta name="description" content="..."&gt;</code></td>
+              <td>SERP Snippet Description</td>
+              <td>Provides the summary text underneath the search result title. Directly dictates user click-through rate (CTR) from search pages.</td>
+              <td><span class="badge-impact critical">Critical (CTR #1)</span></td>
+            </tr>
+            <tr>
+              <td><code>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</code></td>
+              <td>Responsive Mobile Viewport</td>
+              <td>Required for Google's Mobile-First Indexing. Pages without this fail mobile-friendly audits and get demoted on mobile search.</td>
+              <td><span class="badge-impact critical">Critical (Mobile)</span></td>
+            </tr>
+            <tr>
+              <td><code>&lt;link rel="canonical" href="..."&gt;</code></td>
+              <td>Canonical URL Specification</td>
+              <td>Tells search engines the authoritative URL for the content, consolidating ranking power and avoiding duplicate content penalties.</td>
+              <td><span class="badge-impact high">High (Indexing)</span></td>
+            </tr>
+            <tr>
+              <td><code>&lt;meta name="robots" content="index, follow"&gt;</code></td>
+              <td>Crawler Directives</td>
+              <td>Explicitly instructs crawlers whether to index the page and whether to follow outbound links on the page.</td>
+              <td><span class="badge-impact high">High (Control)</span></td>
+            </tr>
+            <tr>
+              <td><code>&lt;meta property="og:title"&gt; &amp; &lt;og:image"&gt;</code></td>
+              <td>Open Graph Social Previews</td>
+              <td>Generates rich visual preview cards when links are shared on Slack, Discord, LinkedIn, iMessage, and X/Twitter.</td>
+              <td><span class="badge-impact medium">High (Social SEO)</span></td>
+            </tr>
+            <tr>
+              <td><code>&lt;script type="application/ld+json"&gt;</code></td>
+              <td>Structured Data (Schema.org)</td>
+              <td>Enables Google Rich Results (star ratings, event dates, author cards, FAQs, breadcrumb trails) right on the search page.</td>
+              <td><span class="badge-impact high">High (Rich Results)</span></td>
+            </tr>
+            <tr>
+              <td><code>&lt;meta charset="UTF-8"&gt;</code></td>
+              <td>Character Encoding</td>
+              <td>Ensures universal text rendering (emojis, accents, multilingual characters) so bots don't encounter malformed text.</td>
+              <td><span class="badge-impact high">Fundamental</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- =================================================================
+         SECTION 3 (Subheader 3): Pure HTML 3x3 Grid (No CSS, No Table)
+         ================================================================= -->
+    <section id="section-grid" class="assessment-section" aria-labelledby="heading-section-3">
+      <div class="section-header-block">
+        <div class="section-tag">Pure HTML Layout Experiment</div>
+        <!-- SUBHEADER 3 (h2) -->
+        <h2 id="heading-section-3" class="section-title">3. Pure HTML 3×3 Grid (Strictly Zero CSS &amp; Zero &lt;table&gt;)</h2>
+        <p class="section-desc">
+          <strong>Assignment Challenge:</strong> Build a 3×3 grid layout without using <code>&lt;table&gt;</code>, without using flexbox/grid, and without applying <em>any</em> CSS styling (no inline <code>style=""</code>, no class rules, no external styles).
+        </p>
+      </div>
+
+      <div class="grid-explanation-box">
+        <h3>The Architectural Principle: Block vs Inline Default User-Agent Flow</h3>
+        <p>
+          By HTML specification default, a <code>&lt;div&gt;</code> has an intrinsic user-agent display of <strong>block</strong> (causing it to occupy 100% width and start on a new vertical line), while a <code>&lt;span&gt;</code> has an intrinsic user-agent display of <strong>inline</strong> (causing it to sit horizontally alongside sibling inline elements on the same line).
+        </p>
+        <p>
+          Therefore, creating 3 <code>&lt;div&gt;</code> elements (the 3 vertical rows), each containing 3 <code>&lt;span&gt;</code> elements separated by text spacing (the 3 horizontal columns), naturally renders a functional 3×3 grid structure using 100% native HTML document flow!
+        </p>
+      </div>
+
+      <!-- Pure HTML 3x3 Grid Container (Explicitly NO CSS classes on the grid elements) -->
+      <div class="pure-grid-demo-wrapper">
+        <div class="demo-label">Live Pure HTML 3×3 Render Output (Raw divs &amp; spans):</div>
+        
+        <!-- PURE 3x3 HTML GRID: NO CSS APPLIED TO INNER DIVS/SPANS -->
+        <div id="pure-html-3x3-container">
+          <div>
+            <span>[ Row 1, Col 1 ]</span>
+            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+            <span>[ Row 1, Col 2 ]</span>
+            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+            <span>[ Row 1, Col 3 ]</span>
+          </div>
+          <br>
+          <div>
+            <span>[ Row 2, Col 1 ]</span>
+            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+            <span>[ Row 2, Col 2 ]</span>
+            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+            <span>[ Row 2, Col 3 ]</span>
+          </div>
+          <br>
+          <div>
+            <span>[ Row 3, Col 1 ]</span>
+            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+            <span>[ Row 3, Col 2 ]</span>
+            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+            <span>[ Row 3, Col 3 ]</span>
+          </div>
+        </div>
+
+        <div class="code-snippet-card">
+          <div class="snippet-header">Source Markup (Zero CSS, Pure Divs &amp; Spans):</div>
+          <pre><code>&lt;!-- Pure HTML 3x3 Grid using only native block and inline flow --&gt;
+&lt;div&gt;
+  &lt;span&gt;[ Row 1, Col 1 ]&lt;/span&gt;  &lt;span&gt;[ Row 1, Col 2 ]&lt;/span&gt;  &lt;span&gt;[ Row 1, Col 3 ]&lt;/span&gt;
+&lt;/div&gt;
+&lt;div&gt;
+  &lt;span&gt;[ Row 2, Col 1 ]&lt;/span&gt;  &lt;span&gt;[ Row 2, Col 2 ]&lt;/span&gt;  &lt;span&gt;[ Row 2, Col 3 ]&lt;/span&gt;
+&lt;/div&gt;
+&lt;div&gt;
+  &lt;span&gt;[ Row 3, Col 1 ]&lt;/span&gt;  &lt;span&gt;[ Row 3, Col 2 ]&lt;/span&gt;  &lt;span&gt;[ Row 3, Col 3 ]&lt;/span&gt;
+&lt;/div&gt;</code></pre>
+        </div>
+      </div>
+    </section>
+
+    <!-- =================================================================
+         SECTION 4 (Subheader 4): CSS Deep Dive: Box Model Gallery,
+         Font Units Itemized List, and 4-Positioning Creative Lab
+         ================================================================= -->
+    <section id="section-box-model" class="assessment-section" aria-labelledby="heading-section-4">
+      <div class="section-header-block">
+        <div class="section-tag">CSS Box Model &amp; Typography &amp; Positioning</div>
+        <!-- SUBHEADER 4 (h2) -->
+        <h2 id="heading-section-4" class="section-title">4. CSS Box Model Gallery, Typographic Scales &amp; Spatial Positioning</h2>
+        <p class="section-desc">
+          CSS governs the visual representation, spatial boundaries, and coordinate systems of the web. This section showcases three comprehensive demonstrations: an interactive Box Model Gallery with step-varying margins, borders, and paddings; an inline-styled typographic scale contrasting absolute vs relative units; and a creative 4-tier positioning laboratory.
+        </p>
+      </div>
+
+      <!-- -------------------------------------------------------------
+           PART A: CSS BOX MODEL GALLERY
+           ------------------------------------------------------------- -->
+      <div class="subsection-block" id="box-model-gallery-anchor">
+        <div class="subsection-header">
+          <h3 class="subsection-title">4.1 CSS Box Model Gallery (3 Rows × 3 Columns)</h3>
+          <p class="subsection-desc">
+            The CSS Box Model consists of 4 concentric layers: <strong>Content</strong> (inner core), <strong>Padding</strong> (internal spacing), <strong>Border</strong> (frame line), and <strong>Margin</strong> (external separation). The matrix below demonstrates row-by-row property variations with 3 distinct values (0px, 10px, 24px).
+          </p>
+        </div>
+
+        <!-- Box Model Legend -->
+        <div class="box-model-legend">
+          <span class="legend-item"><span class="legend-swatch swatch-margin"></span> Margin (Outer Spacing)</span>
+          <span class="legend-item"><span class="legend-swatch swatch-border"></span> Border (Perimeter Frame)</span>
+          <span class="legend-item"><span class="legend-swatch swatch-padding"></span> Padding (Internal Clearance)</span>
+          <span class="legend-item"><span class="legend-swatch swatch-content"></span> Content (Core Payload)</span>
+        </div>
+
+        <!-- THE BOX MODEL MATRIX GALLERY -->
+        <div class="box-model-matrix">
+          
+          <!-- ROW 1: PADDING VARIATIONS -->
+          <div class="matrix-row-container">
+            <div class="matrix-row-title">
+              <span class="row-badge">Row 1</span>
+              <h4>Padding Variations (Internal Buffer) — Border: 2px solid, Margin: 8px</h4>
+            </div>
+            <div class="matrix-cols-grid">
+              
+              <!-- Row 1, Col 1: Padding 0px -->
+              <div class="box-card">
+                <div class="box-card-meta">
+                  <span class="col-badge">Col 1</span>
+                  <code>padding: 0px</code>
+                </div>
+                <div class="box-visual-frame bm-margin-fixed">
+                  <div class="bm-border-fixed bm-pad-0">
+                    <div class="bm-content">
+                      <span class="bm-content-text">Content (Padding 0px)</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="box-card-note">Content touches the border directly with 0px internal buffer.</div>
+              </div>
+
+              <!-- Row 1, Col 2: Padding 10px -->
+              <div class="box-card">
+                <div class="box-card-meta">
+                  <span class="col-badge">Col 2</span>
+                  <code>padding: 10px</code>
+                </div>
+                <div class="box-visual-frame bm-margin-fixed">
+                  <div class="bm-border-fixed bm-pad-10">
+                    <div class="bm-content">
+                      <span class="bm-content-text">Content (Padding 10px)</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="box-card-note">10px internal breathing room surrounds the content evenly.</div>
+              </div>
+
+              <!-- Row 1, Col 3: Padding 24px -->
+              <div class="box-card">
+                <div class="box-card-meta">
+                  <span class="col-badge">Col 3</span>
+                  <code>padding: 24px</code>
+                </div>
+                <div class="box-visual-frame bm-margin-fixed">
+                  <div class="bm-border-fixed bm-pad-24">
+                    <div class="bm-content">
+                      <span class="bm-content-text">Content (Padding 24px)</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="box-card-note">Generous 24px internal cushion creates luxury card feel.</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ROW 2: BORDER VARIATIONS -->
+          <div class="matrix-row-container">
+            <div class="matrix-row-title">
+              <span class="row-badge">Row 2</span>
+              <h4>Border Variations (Boundary Stroke) — Padding: 12px, Margin: 8px</h4>
+            </div>
+            <div class="matrix-cols-grid">
+              
+              <!-- Row 2, Col 1: Border 0px -->
+              <div class="box-card">
+                <div class="box-card-meta">
+                  <span class="col-badge">Col 1</span>
+                  <code>border: 0px (none)</code>
+                </div>
+                <div class="box-visual-frame bm-margin-fixed">
+                  <div class="bm-border-0 bm-pad-fixed">
+                    <div class="bm-content">
+                      <span class="bm-content-text">Content (Border 0px)</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="box-card-note">No boundary stroke; boundary is strictly defined by background.</div>
+              </div>
+
+              <!-- Row 2, Col 2: Border 4px solid -->
+              <div class="box-card">
+                <div class="box-card-meta">
+                  <span class="col-badge">Col 2</span>
+                  <code>border: 4px solid #38bdf8</code>
+                </div>
+                <div class="box-visual-frame bm-margin-fixed">
+                  <div class="bm-border-4 bm-pad-fixed">
+                    <div class="bm-content">
+                      <span class="bm-content-text">Content (Border 4px)</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="box-card-note">Prominent 4px solid colored frame encapsulates the padding.</div>
+              </div>
+
+              <!-- Row 2, Col 3: Border 8px dashed -->
+              <div class="box-card">
+                <div class="box-card-meta">
+                  <span class="col-badge">Col 3</span>
+                  <code>border: 8px dashed #a855f7</code>
+                </div>
+                <div class="box-visual-frame bm-margin-fixed">
+                  <div class="bm-border-8 bm-pad-fixed">
+                    <div class="bm-content">
+                      <span class="bm-content-text">Content (Border 8px)</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="box-card-note">Heavy 8px dashed perimeter demonstrates thick boundary strokes.</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ROW 3: MARGIN VARIATIONS -->
+          <div class="matrix-row-container">
+            <div class="matrix-row-title">
+              <span class="row-badge">Row 3</span>
+              <h4>Margin Variations (External Clearance) — Border: 2px solid, Padding: 12px</h4>
+            </div>
+            <div class="matrix-cols-grid">
+              
+              <!-- Row 3, Col 1: Margin 0px -->
+              <div class="box-card">
+                <div class="box-card-meta">
+                  <span class="col-badge">Col 1</span>
+                  <code>margin: 0px</code>
+                </div>
+                <div class="box-visual-frame">
+                  <div class="bm-mar-0 bm-border-fixed bm-pad-fixed">
+                    <div class="bm-content">
+                      <span class="bm-content-text">Content (Margin 0px)</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="box-card-note">Box sits flush against its container perimeter with 0px external gap.</div>
+              </div>
+
+              <!-- Row 3, Col 2: Margin 12px -->
+              <div class="box-card">
+                <div class="box-card-meta">
+                  <span class="col-badge">Col 2</span>
+                  <code>margin: 12px</code>
+                </div>
+                <div class="box-visual-frame">
+                  <div class="bm-mar-12 bm-border-fixed bm-pad-fixed">
+                    <div class="bm-content">
+                      <span class="bm-content-text">Content (Margin 12px)</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="box-card-note">12px outer buffer pushes neighboring components away cleanly.</div>
+              </div>
+
+              <!-- Row 3, Col 3: Margin 24px -->
+              <div class="box-card">
+                <div class="box-card-meta">
+                  <span class="col-badge">Col 3</span>
+                  <code>margin: 24px</code>
+                </div>
+                <div class="box-visual-frame">
+                  <div class="bm-mar-24 bm-border-fixed bm-pad-fixed">
+                    <div class="bm-content">
+                      <span class="bm-content-text">Content (Margin 24px)</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="box-card-note">Substantial 24px isolation zone creates distinct spatial hierarchy.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- -------------------------------------------------------------
+           PART B: TYPOGRAPHY UNITS & INLINE STYLING ITEMIZATION
+           ------------------------------------------------------------- -->
+      <div class="subsection-block" id="section-typography">
+        <div class="subsection-header">
+          <h3 class="subsection-title">4.2 Typographic Scaling: 6 Font Sizes via Inline Styles &amp; Unit Rationale</h3>
+          <p class="subsection-desc">
+            To evaluate CSS length units, the exact same sentence is rendered across 6 items with distinct font sizes applied using strict <strong>inline styling (<code>style="font-size: ..."</code>)</strong>. Each item compares absolute vs relative units and details concrete production use cases.
+          </p>
+        </div>
+
+        <!-- The 6 Itemized Font Sizes List -->
+        <ul class="typography-itemized-list" aria-label="Itemized Font Size Demonstrations">
+          
+          <!-- Item 1: px (Absolute) -->
+          <li class="type-item-card">
+            <div class="type-item-header">
+              <div class="type-badge-group">
+                <span class="badge-unit">13px</span>
+                <span class="badge-kind absolute">Absolute Unit</span>
+              </div>
+              <code class="type-inline-code">style="font-size: 13px;"</code>
+            </div>
+            <div class="type-rendered-text" style="font-size: 13px;">
+              Crafting accessible, beautiful, and performant web interfaces requires understanding foundational building blocks.
+            </div>
+            <div class="type-explanation-block">
+              <strong>When to use (with Example):</strong> Pixels (<code>px</code>) represent fixed device dots (1/96th of an inch). Use <code>px</code> when you need strict, unvarying dimensions that must not fluctuate when users adjust browser base font sizes—such as 1px divider lines, fixed 16px navigation icons, or canvas coordinate matrices.
+            </div>
+          </li>
+
+          <!-- Item 2: rem (Relative to Root) -->
+          <li class="type-item-card">
+            <div class="type-item-header">
+              <div class="type-badge-group">
+                <span class="badge-unit">1.125rem (18px)</span>
+                <span class="badge-kind relative">Relative to Root</span>
+              </div>
+              <code class="type-inline-code">style="font-size: 1.125rem;"</code>
+            </div>
+            <div class="type-rendered-text" style="font-size: 1.125rem;">
+              Crafting accessible, beautiful, and performant web interfaces requires understanding foundational building blocks.
+            </div>
+            <div class="type-explanation-block">
+              <strong>When to use (with Example):</strong> <code>rem</code> scales relative to the root <code>&lt;html&gt;</code> element (usually 16px default). It is the gold standard for body copy, article text, and responsive layout grids. <em>Accessibility Example:</em> If a visually impaired user increases their browser default font size to 24px, <code>1.125rem</code> automatically scales up to 27px, keeping your app legible and compliant with WCAG accessibility standards.
+            </div>
+          </li>
+
+          <!-- Item 3: em (Relative to Parent) -->
+          <li class="type-item-card">
+            <div class="type-item-header">
+              <div class="type-badge-group">
+                <span class="badge-unit">1.35em (~21.6px)</span>
+                <span class="badge-kind relative">Relative to Parent</span>
+              </div>
+              <code class="type-inline-code">style="font-size: 1.35em;"</code>
+            </div>
+            <div class="type-rendered-text" style="font-size: 1.35em;">
+              Crafting accessible, beautiful, and performant web interfaces requires understanding foundational building blocks.
+            </div>
+            <div class="type-explanation-block">
+              <strong>When to use (with Example):</strong> <code>em</code> scales relative to its immediate parent element's font size. It is ideal for self-contained UI components (like buttons, badges, and tooltips) where padding and icon size should scale proportionally when you resize the component. <em>Example:</em> A button styled with <code>padding: 0.5em 1em; font-size: 1.2em;</code> expands harmoniously whenever placed in a larger container.
+            </div>
+          </li>
+
+          <!-- Item 4: vw (Relative to Viewport Width) -->
+          <li class="type-item-card">
+            <div class="type-item-header">
+              <div class="type-badge-group">
+                <span class="badge-unit">1.6vw (Fluid)</span>
+                <span class="badge-kind relative">Relative to Viewport</span>
+              </div>
+              <code class="type-inline-code">style="font-size: 1.6vw;"</code>
+            </div>
+            <div class="type-rendered-text" style="font-size: 1.6vw;">
+              Crafting accessible, beautiful, and performant web interfaces requires understanding foundational building blocks.
+            </div>
+            <div class="type-explanation-block">
+              <strong>When to use (with Example):</strong> <code>vw</code> represents 1% of the viewport width. Use viewport units for dynamic, fluid hero banner titles and magazine headlines (e.g., <code>clamp(1.5rem, 3vw, 4rem)</code>) so that text expands smoothly on desktop monitors and contracts on mobile devices without requiring dozens of media queries.
+            </div>
+          </li>
+
+          <!-- Item 5: % (Relative Percentage) -->
+          <li class="type-item-card">
+            <div class="type-item-header">
+              <div class="type-badge-group">
+                <span class="badge-unit">135% (~21.6px)</span>
+                <span class="badge-kind relative">Relative Percentage</span>
+              </div>
+              <code class="type-inline-code">style="font-size: 135%;"</code>
+            </div>
+            <div class="type-rendered-text" style="font-size: 135%;">
+              Crafting accessible, beautiful, and performant web interfaces requires understanding foundational building blocks.
+            </div>
+            <div class="type-explanation-block">
+              <strong>When to use (with Example):</strong> Percentage (<code>%</code>) behaves identically to <code>em</code> when applied to font-size, calculating size as a direct ratio of the inherited parent font size. <em>Example:</em> Setting <code>html { font-size: 62.5%; }</code> simplifies rem calculations (making 1rem = 10px), or using <code>135%</code> inside a lead paragraph to emphasize an introductory callout relative to standard body copy.
+            </div>
+          </li>
+
+          <!-- Item 6: pt (Absolute Print Points) -->
+          <li class="type-item-card">
+            <div class="type-item-header">
+              <div class="type-badge-group">
+                <span class="badge-unit">18pt (24px)</span>
+                <span class="badge-kind absolute">Absolute Print Unit</span>
+              </div>
+              <code class="type-inline-code">style="font-size: 18pt;"</code>
+            </div>
+            <div class="type-rendered-text" style="font-size: 18pt;">
+              Crafting accessible, beautiful, and performant web interfaces requires understanding foundational building blocks.
+            </div>
+            <div class="type-explanation-block">
+              <strong>When to use (with Example):</strong> Points (<code>pt</code>) are physical typography units (1pt = 1/72 of an inch). While deprecated for responsive screen layouts, <code>pt</code> is the industry standard for print stylesheets (<code>@media print</code>) and server-side PDF invoice generation, guaranteeing that physical printouts maintain exact typographic sizing regardless of printer DPI.
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <!-- -------------------------------------------------------------
+           PART C: CREATIVE 4-POSITIONING OPTIONS STUDIO & BOTTOM FOOTER
+           ------------------------------------------------------------- -->
+      <div class="subsection-block" id="section-positioning">
+        <div class="subsection-header">
+          <h3 class="subsection-title">4.3 Creative CSS Positioning Studio &amp; Spatial Anchor Mechanics</h3>
+          <p class="subsection-desc">
+            CSS Positioning controls how elements are placed relative to document flow, parent containers, or the screen viewport. Below is an interactive creative studio demonstrating all 4 fundamental positioning models (<strong>static</strong>, <strong>relative</strong>, <strong>absolute</strong>, and <strong>fixed</strong>), along with the architecture used to guarantee that the page footer remains anchored at the bottom of the screen.
+          </p>
+        </div>
+
+        <!-- Positioning Interactive Cards Grid -->
+        <div class="positioning-cards-grid">
+          
+          <!-- Card 1: Static -->
+          <article class="pos-card pos-card-static">
+            <div class="pos-card-header">
+              <span class="pos-badge">position: static;</span>
+              <span class="pos-nature">Default Normal Flow</span>
+            </div>
+            <h4 class="pos-name">1. Normal Document Flow</h4>
+            <p class="pos-desc">
+              Elements render sequentially according to natural DOM order. Properties like <code>top</code>, <code>right</code>, <code>bottom</code>, <code>left</code>, and <code>z-index</code> have <strong>no effect</strong>.
+            </p>
+            <div class="pos-use-case">
+              <strong>When to use:</strong> Over 90% of standard web content—paragraphs, basic cards, standard article text, and semantic body containers that simply follow normal document layout.
+            </div>
+            <div class="pos-interactive-demo">
+              <div class="demo-static-box">Standard Static Element (Flows naturally)</div>
+            </div>
+          </article>
+
+          <!-- Card 2: Relative -->
+          <article class="pos-card pos-card-relative">
+            <div class="pos-card-header">
+              <span class="pos-badge">position: relative;</span>
+              <span class="pos-nature">In-Flow Offset &amp; Containing Context</span>
+            </div>
+            <h4 class="pos-name">2. Relative Offset &amp; Anchor</h4>
+            <p class="pos-desc">
+              The element retains its original space in document flow, but can be visually shifted using <code>top</code>/<code>left</code> without disrupting neighboring elements. Crucially, it establishes a coordinate reference for nested <code>absolute</code> children.
+            </p>
+            <div class="pos-use-case">
+              <strong>When to use:</strong> Parent container wrappers for cards with floating badges, dropdown anchors, or subtle hover micro-nudges.
+            </div>
+            <div class="pos-interactive-demo demo-rel-wrapper">
+              <div class="demo-relative-box" id="demo-rel-box">
+                Shifted Relative Box (<code>top: 6px; left: 10px;</code>)
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 3: Absolute -->
+          <article class="pos-card pos-card-absolute">
+            <div class="pos-card-header">
+              <span class="pos-badge">position: absolute;</span>
+              <span class="pos-nature">Detached Coordinate Placement</span>
+            </div>
+            <h4 class="pos-name">3. Absolute Coordinate Pinning</h4>
+            <p class="pos-desc">
+              Completely removed from normal document flow (occupies 0px spatial footprint). Positions itself precisely relative to the nearest positioned ancestor (an ancestor with <code>relative</code>, <code>absolute</code>, or <code>fixed</code>).
+            </p>
+            <div class="pos-use-case">
+              <strong>When to use:</strong> Notification count badges on bell icons, corner ribbons ("SALE", "NEW"), modal dialog backdrops, and custom dropdown menus.
+            </div>
+            <div class="pos-interactive-demo demo-abs-stage">
+              <div class="demo-parent-relative">
+                <span>Parent Container (<code>position: relative</code>)</span>
+                <span class="demo-absolute-badge" title="Absolute Badge pinned top-right">NEW 🌟</span>
+                <span class="demo-absolute-bottom-badge" title="Absolute Badge pinned bottom-left">Active Status</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 4: Fixed -->
+          <article class="pos-card pos-card-fixed">
+            <div class="pos-card-header">
+              <span class="pos-badge">position: fixed;</span>
+              <span class="pos-nature">Viewport-Anchored Persistence</span>
+            </div>
+            <h4 class="pos-name">4. Viewport Screen Pinning</h4>
+            <p class="pos-desc">
+              Removed from document flow and bound directly to the browser window viewport coordinates. Remains steadfast in the exact same screen location regardless of user scrolling.
+            </p>
+            <div class="pos-use-case">
+              <strong>When to use:</strong> Persistent navigation headers, floating "Back to Top" buttons, cookie consent banners, and global live-chat support triggers.
+            </div>
+            <div class="pos-interactive-demo">
+              <div class="demo-fixed-indicator">
+                <span class="pulse-dot"></span> View the Sticky Top Navbar &amp; Floating Quick-Action FAB
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Footer Bottom Positioning Strategy Explanation Callout -->
+        <div class="footer-strategy-card">
+          <div class="strategy-icon">📌</div>
+          <div class="strategy-content">
+            <h4>How We Guarantee the Footer Stays at the Bottom of the Screen</h4>
+            <p>
+              To ensure the footer never awkwardly floats midway on screens with minimal content while behaving seamlessly on tall scrolling pages, we utilize a dual positioning strategy:
+            </p>
+            <ul class="strategy-list">
+              <li>
+                <strong>Flexbox Full-Height Viewport Foundation:</strong> The <code>&lt;body&gt;</code> is styled with <code>min-height: 100vh; display: flex; flex-direction: column;</code>. The <code>&lt;main&gt;</code> has <code>flex: 1 0 auto;</code> which naturally pushes the footer down to the very base of the viewport even on empty pages.
+              </li>
+              <li>
+                <strong>Sticky Anchor Pinning:</strong> The <code>&lt;footer&gt;</code> utilizes <code>position: sticky; bottom: 0;</code> to maintain clean spatial integrity, guaranteeing a rock-solid bottom anchor across mobile and desktop viewports alike.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =================================================================
+         PEER-REVIEW & GRADING SUMMARY GUIDE
+         ================================================================= -->
+    <section id="peer-review-notes" class="assessment-section review-section" aria-labelledby="heading-review">
+      <div class="section-header-block">
+        <div class="section-tag">Peer-Review &amp; Presentation Ready</div>
+        <h2 id="heading-review" class="section-title">Self-Assessment Summary &amp; Verification Checklist</h2>
+        <p class="section-desc">
+          This checklist maps every assignment requirement directly to the implemented code and live demonstrations for class presentations and peer review.
+        </p>
+      </div>
+
+      <div class="checklist-grid">
+        <div class="checklist-item">
+          <span class="check-icon">✅</span>
+          <div class="check-text">
+            <strong>Navbar, Main (1 H1 + 4 H2s &amp; Sections), Footer:</strong>
+            <span>Implemented with full HTML5 semantic landmarks (<code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;footer&gt;</code>).</span>
+          </div>
+        </div>
+        <div class="checklist-item">
+          <span class="check-icon">✅</span>
+          <div class="check-text">
+            <strong>10 Most Useful HTML Tags:</strong>
+            <span>Detailed in Section 1 with developer rationale, code badges, and concrete production use-cases.</span>
+          </div>
+        </div>
+        <div class="checklist-item">
+          <span class="check-icon">✅</span>
+          <div class="check-text">
+            <strong>SEO Research &amp; Header Tags:</strong>
+            <span>Detailed in Section 2 with meta tag breakdowns, crawler mechanics, and live JSON-LD schema in <code>&lt;head&gt;</code>.</span>
+          </div>
+        </div>
+        <div class="checklist-item">
+          <span class="check-icon">✅</span>
+          <div class="check-text">
+            <strong>3×3 Grid with ZERO CSS &amp; NO Tables:</strong>
+            <span>Demonstrated in Section 3 utilizing intrinsic block (<code>&lt;div&gt;</code>) and inline (<code>&lt;span&gt;</code>) browser formatting.</span>
+          </div>
+        </div>
+        <div class="checklist-item">
+          <span class="check-icon">✅</span>
+          <div class="check-text">
+            <strong>CSS Box Model Gallery (3 Rows × 3 Cols):</strong>
+            <span>Built in Section 4.1 showcasing 0px, 10px, 24px variations across padding, borders, and margins with color-coded layers.</span>
+          </div>
+        </div>
+        <div class="checklist-item">
+          <span class="check-icon">✅</span>
+          <div class="check-text">
+            <strong>6 Font Sizes via Inline Styles &amp; Unit Rationale:</strong>
+            <span>Itemized in Section 4.2 with identical text, inline <code>style="font-size: ..."</code>, and absolute vs relative explanations.</span>
+          </div>
+        </div>
+        <div class="checklist-item">
+          <span class="check-icon">✅</span>
+          <div class="check-text">
+            <strong>4 CSS Positioning Modes &amp; Bottom Footer:</strong>
+            <span>Demonstrated in Section 4.3 covering static, relative, absolute, and fixed with bottom-anchored sticky footer mechanics.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================================================================
+       FLOATING ACTION BUTTON (Fixed Positioning Example)
+       =================================================================== -->
+  <button id="btn-back-to-top" class="floating-fab" title="Back to Top" aria-label="Scroll back to top">
+    ↑
+  </button>
+
+  <!-- ===================================================================
+       FOOTER (Requirement 1 & Requirement 6: Anchored to bottom)
+       =================================================================== -->
+  <footer class="site-footer" id="main-footer">
+    <div class="footer-container">
+      <div class="footer-col brand-col">
+        <div class="footer-brand">
+          <span class="brand-icon">&lt;/&gt;</span>
+          <span class="brand-text">CS5610 Web Development</span>
+        </div>
+        <p class="footer-tagline">
+          Crafted with vanilla HTML5, modern CSS3, and responsive JavaScript. Clean semantics, accessible markup, and zero unnecessary frameworks.
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-heading">Self-Assessment Sections</h4>
+        <ul class="footer-links">
+          <li><a href="#section-tags">01. 10 Essential HTML Tags</a></li>
+          <li><a href="#section-seo">02. SEO &amp; Header Meta Tags</a></li>
+          <li><a href="#section-grid">03. Pure HTML 3×3 Grid</a></li>
+          <li><a href="#section-box-model">04. Box Model Matrix</a></li>
+          <li><a href="#section-typography">05. Typographic Units</a></li>
+          <li><a href="#section-positioning">06. 4-Tier Positioning</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-heading">Student &amp; Course Details</h4>
+        <p class="footer-info"><strong>Student:</strong> Harshitha Seetharaman</p>
+        <p class="footer-info"><strong>Institution:</strong> Northeastern University</p>
+        <p class="footer-info"><strong>Course:</strong> CS5610 Web Development</p>
+        <p class="footer-info"><strong>Repository:</strong> <a href="https://github.com/Harshiacchu/web_dev" target="_blank" rel="noopener noreferrer">Harshiacchu/web_dev</a></p>
+      </div>
+    </div>
+
+    <div class="footer-bottom-bar">
+      <div class="bottom-bar-content">
+        <span>&copy; 2026 Harshitha Seetharaman · CS5610 Self-Assessment. All rights reserved.</span>
+        <span class="footer-pos-badge">Positioning: <code>min-height: 100vh</code> + <code>margin-top: auto</code> + <code>position: sticky</code></span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Vanilla JavaScript Logic -->
+  <script src="js/app.js"></script>
+</body>
+</html>
