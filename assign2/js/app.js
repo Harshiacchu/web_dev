@@ -57,6 +57,13 @@ const elements = {
   themeToggleBtn: document.getElementById('themeToggleBtn'),
   dataScopeSelect: document.getElementById('dataScopeSelect'),
   
+  // Filter Modal
+  openFiltersBtn: document.getElementById('openFiltersBtn'),
+  activeFilterBadge: document.getElementById('activeFilterBadge'),
+  filterModalOverlay: document.getElementById('filterModalOverlay'),
+  filterModalCloseBtn: document.getElementById('filterModalCloseBtn'),
+  applyFiltersBtn: document.getElementById('applyFiltersBtn'),
+
   // Stats
   statAvgPrice: document.getElementById('statAvgPrice'),
   statAvgRating: document.getElementById('statAvgRating'),
@@ -323,6 +330,9 @@ function applyFiltersAndRender() {
   sortListings(workingList);
 
   state.filteredListings = workingList;
+
+  // Update Active Filter Badge
+  updateActiveFilterBadge();
 
   // Update Insights & Stats Strip
   updateInsightStats(workingList);
@@ -1006,6 +1016,34 @@ function setupEventListeners() {
     });
   });
 
+  // Filter Modal Controls
+  if (elements.openFiltersBtn) {
+    elements.openFiltersBtn.addEventListener('click', () => {
+      if (elements.filterModalOverlay) {
+        elements.filterModalOverlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+    });
+  }
+
+  if (elements.filterModalCloseBtn) {
+    elements.filterModalCloseBtn.addEventListener('click', closeFilterModal);
+  }
+
+  if (elements.applyFiltersBtn) {
+    elements.applyFiltersBtn.addEventListener('click', () => {
+      closeFilterModal();
+      applyFiltersAndRender();
+      showToast(`Filters applied (${state.filteredListings.length} stays available)`);
+    });
+  }
+
+  if (elements.filterModalOverlay) {
+    elements.filterModalOverlay.addEventListener('click', (e) => {
+      if (e.target === elements.filterModalOverlay) closeFilterModal();
+    });
+  }
+
   // Modal Close Events
   elements.modalCloseBtn.addEventListener('click', closeListingModal);
   elements.modalOverlay.addEventListener('click', (e) => {
@@ -1013,10 +1051,48 @@ function setupEventListeners() {
   });
 
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && elements.modalOverlay.classList.contains('active')) {
-      closeListingModal();
+    if (e.key === 'Escape') {
+      if (elements.filterModalOverlay && elements.filterModalOverlay.classList.contains('active')) {
+        closeFilterModal();
+      }
+      if (elements.modalOverlay && elements.modalOverlay.classList.contains('active')) {
+        closeListingModal();
+      }
     }
   });
+}
+
+/**
+ * Close Filter Modal
+ */
+function closeFilterModal() {
+  if (elements.filterModalOverlay) {
+    elements.filterModalOverlay.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+}
+
+/**
+ * Update Active Filter Badge Count
+ */
+function updateActiveFilterBadge() {
+  let count = 0;
+  if (state.selectedRoomType && state.selectedRoomType !== 'all') count++;
+  if (state.sortBy && state.sortBy !== 'recommended') count++;
+  if (state.limitCount !== 50) count++;
+  if (state.superhostOnly) count++;
+  if (state.favoritesOnly) count++;
+
+  if (elements.activeFilterBadge) {
+    if (count > 0) {
+      elements.activeFilterBadge.textContent = count;
+      elements.activeFilterBadge.style.display = 'inline-flex';
+      elements.openFiltersBtn?.classList.add('active');
+    } else {
+      elements.activeFilterBadge.style.display = 'none';
+      elements.openFiltersBtn?.classList.remove('active');
+    }
+  }
 }
 
 /**
