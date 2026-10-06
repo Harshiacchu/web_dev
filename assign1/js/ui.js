@@ -116,7 +116,7 @@ export function initPointerGlow() {
   });
 }
 
-/** Highlight the nav link matching the current page. */
+/** Highlight the nav link matching the current page and handle brand link navigation. */
 export function initActiveNav() {
   const path = window.location.pathname.split("/").pop() || "index.html";
   document.querySelectorAll(".nav-links a").forEach((link) => {
@@ -124,5 +124,26 @@ export function initActiveNav() {
     if (href === path || (path === "index.html" && href === "./index.html")) {
       link.classList.add("is-active");
     }
+  });
+
+  document.querySelectorAll(".brand").forEach((brand) => {
+    brand.addEventListener("click", (event) => {
+      const isHome =
+        path === "" ||
+        path === "index.html" ||
+        window.location.pathname.endsWith("index.html") ||
+        window.location.pathname === "/";
+      if (isHome) {
+        event.preventDefault();
+        window.scrollTo({ top: 0, behavior: "smooth" });
+        if (window.location.hash) {
+          history.pushState(
+            "",
+            document.title,
+            window.location.pathname + window.location.search,
+          );
+        }
+      }
+    });
   });
 }

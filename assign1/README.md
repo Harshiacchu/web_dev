@@ -1,6 +1,6 @@
-# Harshitha Seetharaman — Personal Homepage
+# Personal Homepage
 
-A front-end-only personal homepage built with **vanilla HTML5, CSS3, and ES6
+A front end only personal homepage built with **vanilla HTML5, CSS3, and ES6
 modules**. Its signature feature is an **interactive terminal** that lets visitors
 explore my work by typing commands, wrapped in a warm "Reading Room" theme (deep
 green, cream, walnut, and gold) with a persistent light/dark switch.
@@ -17,15 +17,12 @@ MS in Computer Science, Northeastern University (Khoury College)
 
 ## Class Link
 
-CS Web Development — Project 1: Personal Home Page
-<!-- TODO: paste your Canvas course URL here before submitting -->
-
-`<add your course/Canvas link here>`
+[CS5610 Web Development- Project 1: Personal Home Page](https://northeastern.instructure.com/courses/261032)
 
 ## Project Objective
 
-Build a memorable, standards-compliant personal homepage using only vanilla
-HTML5, CSS3, and ES6 modules — no backend, no jQuery, no component libraries —
+Build a memorable, standards compliant personal homepage using only vanilla
+HTML5, CSS3, and ES6 modules, no backend, no jQuery, no component libraries,
 that clearly communicates who I am and what I build, includes an original
 interactive component, and is deployed publicly. The full design rationale
 (project description, user personas, user stories, and mockups) lives in
@@ -35,8 +32,9 @@ interactive component, and is deployed publicly. The full design rationale
 
 ![Screenshot of the homepage: hero section with a rotating portrait and an interactive terminal, in the warm Reading Room theme](./images/screenshot.png)
 
-> If the image above is missing, open `index.html` and take a screenshot into
-> `images/screenshot.png`.
+## Demo Video
+
+- 📹 **Walkthrough & Demonstration:** [Watch on YouTube / Loom](https://www.youtube.com/) <!-- TODO: Replace with your public narrated demo video URL -->
 
 ## Features
 

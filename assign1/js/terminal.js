@@ -177,5 +177,4 @@ export function initTerminal(root) {
   run("about");
   echoCommand("help");
   run("help");
-  input.focus();
 }
