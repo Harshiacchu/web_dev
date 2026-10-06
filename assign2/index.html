@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BayStay SF · San Francisco Airbnb Explorer</title>
+  <meta name="description" content="Discover premium San Francisco Airbnb listings with real-time AJAX loading, interactive map visualization, neighborhood filters, and stay cost calculator." />
+  <meta name="keywords" content="Airbnb, San Francisco, Rentals, Vacation stays, Western Addition, Mission, Duboce Triangle, AJAX, Web Development" />
+  <meta name="author" content="Harshitha Seetharaman" />
+
+  <!-- Open Graph & Social Meta -->
+  <meta property="og:title" content="BayStay SF · San Francisco Airbnb Explorer" />
+  <meta property="og:description" content="Interactive San Francisco Airbnb explorer loading listings dynamically via AJAX with live search, filters, and stay cost calculator." />
+  <meta property="og:type" content="website" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏡</text></svg>" />
+
+  <!-- Google Fonts: Plus Jakarta Sans & Outfit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Leaflet Map CSS for Interactive Map View -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+<body>
+
+  <!-- Sticky Top Navigation Header -->
+  <header class="site-header" role="banner">
+    <div class="container header-container">
+      <a href="./" class="brand-logo" aria-label="BayStay SF Home">
+        <svg viewBox="0 0 32 32" aria-hidden="true">
+          <path d="M16 1c2.008 0 3.463.963 4.751 3.269l.533 1.025c1.954 3.83 6.114 12.54 7.1 14.832 1.405 3.28 1.042 6.551-.951 8.544-2.222 2.222-5.748 2.33-8.878.508l-2.555-1.503-2.555 1.503c-3.13 1.822-6.656 1.714-8.878-.508-1.993-1.993-2.356-5.264-.951-8.544.986-2.292 5.146-11.002 7.1-14.832l.533-1.025C12.537 1.963 13.992 1 16 1zm0 2c-1.391 0-2.34.606-3.414 2.527l-.547 1.051C10.093 10.398 5.955 19.06 5.044 21.18c-1.05 2.453-.74 4.773.687 6.2 1.492 1.492 4.093 1.492 6.554.02l3.715-2.185 3.715 2.185c2.461 1.472 5.062 1.472 6.554-.02 1.427-1.427 1.737-3.747.687-6.2-.911-2.12-5.049-10.782-6.995-14.602l-.547-1.051C18.34 3.606 17.391 3 16 3zm0 11c2.209 0 4 1.791 4 4 0 2.28-1.597 4.195-3.729 4.708l-.271.042c-2.209 0-4-1.791-4-4 0-2.28 1.597-4.195 3.729-4.708l.271-.042zm0 2c-1.105 0-2 .895-2 2s.895 2 2 2 2-.895 2-2-.895-2-2-2z"/>
+        </svg>
+        <span>BayStay <span style="font-weight:400; color:var(--text-muted); font-size:1.1rem;">SF</span></span>
+        <span class="brand-badge">CS5610 AJAX Demo</span>
+      </a>
+
+      <!-- Header Action Utilities -->
+      <div class="header-actions">
+        <!-- Wishlist Button with Dynamic Counter -->
+        <button id="favHeaderBtn" class="action-btn" title="Saved Wishlist" aria-label="View Saved Listings">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+          </svg>
+          <span>Saved</span>
+          <span id="favHeaderCount" class="badge-count">0</span>
+        </button>
+
+        <!-- Light / Dark Theme Switcher -->
+        <button id="themeToggleBtn" class="action-btn icon-only" title="Toggle Light/Dark Theme" aria-label="Toggle Theme">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero & Analytics Insights Banner -->
+  <section class="hero-section" aria-label="Overview & Key Insights">
+    <div class="container hero-content">
+      <div class="hero-title-row">
+        <div>
+          <h1 class="hero-title">San Francisco Airbnb Listings</h1>
+          <p class="hero-subtitle">
+            Exploring San Francisco vacation rentals dynamically loaded using modern JavaScript AJAX (<code>fetch</code> & <code>async/await</code>).
+          </p>
+        </div>
+      </div>
+
+      <!-- Real-Time Metrics Strip -->
+      <div class="stats-strip">
+        <div class="stat-card">
+          <div class="stat-icon-wrap">🏷️</div>
+          <div class="stat-info">
+            <span class="stat-label">Avg Nightly Rate</span>
+            <span id="statAvgPrice" class="stat-value">$182</span>
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon-wrap">⭐</div>
+          <div class="stat-info">
+            <span class="stat-label">Avg Guest Rating</span>
+            <span id="statAvgRating" class="stat-value">4.87</span>
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon-wrap">📍</div>
+          <div class="stat-info">
+            <span class="stat-label">Top Neighborhood</span>
+            <span id="statTopNeighborhood" class="stat-value">Western Addition</span>
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon-wrap">🏆</div>
+          <div class="stat-info">
+            <span class="stat-label">Superhost Share</span>
+            <span id="statSuperhostPct" class="stat-value">62%</span>
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon-wrap">🏠</div>
+          <div class="stat-info">
+            <span class="stat-label">Active Listings</span>
+            <span id="statShowingCount" class="stat-value">50</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sticky Search & Filter Control Bar -->
+  <section class="toolbar-section" aria-label="Filters and Search Controls">
+    <div class="container toolbar-grid">
+      <!-- Search & Filters Primary Row -->
+      <div class="search-row">
+        <div class="search-input-wrap">
+          <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <input 
+            type="text" 
+            id="searchInput" 
+            class="search-input" 
+            placeholder="Search by listing name, host, neighborhood, or amenities (e.g., 'Duboce', 'Holly', 'Wifi')..."
+            aria-label="Search listings"
+          />
+          <button id="searchClearBtn" class="search-clear-btn" aria-label="Clear search">✕</button>
+        </div>
+
+        <div class="filter-controls-wrap">
+          <!-- Room Type Select -->
+          <select id="roomTypeSelect" class="custom-select" aria-label="Filter by room type">
+            <option value="all">All Room Types</option>
+            <option value="Entire home/apt">Entire Home / Apt</option>
+            <option value="Private room">Private Room</option>
+            <option value="Shared room">Shared Room</option>
+          </select>
+
+          <!-- Sorting Select -->
+          <select id="sortSelect" class="custom-select" aria-label="Sort listings">
+            <option value="recommended">Sort: Recommended</option>
+            <option value="price-asc">Price: Low to High</option>
+            <option value="price-desc">Price: High to Low</option>
+            <option value="rating-desc">Rating: Highest First</option>
+            <option value="reviews-desc">Most Reviews</option>
+            <option value="name-asc">Title: A to Z</option>
+          </select>
+
+          <!-- Data Scope Select (50 listings assignment requirement vs all 500) -->
+          <select id="dataScopeSelect" class="custom-select" aria-label="Select data scope">
+            <option value="50">First 50 Listings (Assignment)</option>
+            <option value="100">First 100 Listings</option>
+            <option value="all">All 523 Listings</option>
+          </select>
+
+          <!-- Superhost Filter Button -->
+          <button id="superhostToggleBtn" class="filter-toggle-btn" aria-pressed="false">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <span>Superhost Only</span>
+          </button>
+
+          <!-- Favorites Filter Button -->
+          <button id="favoritesToggleBtn" class="filter-toggle-btn" aria-pressed="false">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            <span>Saved Only</span>
+          </button>
+
+          <!-- Reset Filters Button -->
+          <button id="resetFiltersBtn" class="reset-filters-btn">Reset</button>
+        </div>
+      </div>
+
+      <!-- Quick Neighborhood Filter Pills -->
+      <div id="neighborhoodPills" class="neighborhood-pills-row" role="region" aria-label="Neighborhood filter pills">
+        <!-- Generated dynamically in JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content Layout -->
+  <main class="container" role="main" style="padding-bottom: 60px;">
+    <!-- Results Header & View Toggle -->
+    <div class="results-summary-bar">
+      <div>
+        <span id="resultsCount" class="results-count">50 Stays Available</span>
+        <span id="showingScopeBadge" class="results-scope-badge">Showing first 50 listings (AJAX Loaded)</span>
+      </div>
+
+      <!-- View Mode Buttons -->
+      <div class="view-mode-group" role="group" aria-label="View mode">
+        <button class="view-mode-btn active" data-view="grid" aria-label="Grid View">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+          <span>Grid</span>
+        </button>
+        <button class="view-mode-btn" data-view="list" aria-label="List View">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg>
+          <span>List</span>
+        </button>
+        <button class="view-mode-btn" data-view="split" aria-label="Split Map View">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"></polygon><line x1="8" y1="2" x2="8" y2="18"></line><line x1="16" y1="6" x2="16" y2="22"></line></svg>
+          <span>Map Split</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Main Grid + Map Split Layout -->
+    <div id="mainLayout" class="main-layout">
+      <!-- Listings Cards Container -->
+      <section class="listings-container" aria-label="Airbnb Listings Grid">
+        <div id="listingsGrid" class="listings-grid">
+          <!-- Populated dynamically by app.js -->
+        </div>
+      </section>
+
+      <!-- Map Column (visible in Split Map View) -->
+      <aside class="map-column" aria-label="Interactive Map View">
+        <div id="leaflet-map"></div>
+      </aside>
+    </div>
+  </main>
+
+  <!-- Detailed Listing Modal -->
+  <div id="modalOverlay" class="modal-overlay" role="dialog" aria-modal="true" aria-hidden="true">
+    <div id="modalContainer" class="modal-container">
+      <!-- Dynamic modal content loaded by app.js -->
+    </div>
+    <button id="modalCloseBtn" style="display:none;" aria-label="Close modal"></button>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div id="toastContainer" class="toast-container" aria-live="polite"></div>
+
+  <!-- Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-content">
+      <div class="footer-left">
+        <div class="brand-logo" style="font-size:1.15rem;">
+          <span>BayStay SF</span>
+        </div>
+        <p class="footer-copy">
+          CS5610 Web Development — Assignment 2: JavaScript & DOM Self Assessment · Built with Vanilla HTML5, CSS3 & Modern ES6+ JavaScript.
+        </p>
+      </div>
+      <div class="footer-links">
+        <a href="https://github.com/john-guerra/Airbnb_Listings_demo_page" target="_blank" rel="noopener noreferrer">Class Demo Reference ↗</a>
+        <a href="https://github.com/Harshiacchu/web_dev" target="_blank" rel="noopener noreferrer">GitHub Repository ↗</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Leaflet Map JS Library -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+  <!-- Application Logic -->
+  <script type="module" src="./js/app.js"></script>
+</body>
+</html>
