@@ -52,7 +52,7 @@
   --transition-normal: 0.28s cubic-bezier(0.4, 0, 0.2, 1);
   --transition-slow: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 
-  --header-height: 72px;
+  --header-height: 64px;
   --container-max: 1380px;
 }
 
@@ -265,7 +265,7 @@ ul, ol {
    Hero & Key Insights Section
    ========================================================================== */
 .hero-section {
-  padding: 36px 0 20px 0;
+  padding: 24px 0 16px 0;
   background: linear-gradient(180deg, rgba(255, 56, 92, 0.04) 0%, rgba(255, 255, 255, 0) 100%);
 }
 
@@ -276,7 +276,7 @@ ul, ol {
 .hero-content {
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 16px;
 }
 
 .hero-title-row {
@@ -289,7 +289,7 @@ ul, ol {
 
 .hero-title {
   font-family: 'Outfit', sans-serif;
-  font-size: 2.3rem;
+  font-size: 2.1rem;
   font-weight: 800;
   line-height: 1.15;
   letter-spacing: -0.75px;
@@ -299,7 +299,7 @@ ul, ol {
 }
 
 .hero-subtitle {
-  font-size: 1.05rem;
+  font-size: 1rem;
   color: var(--text-muted);
   max-width: 680px;
   margin-top: 4px;
@@ -308,19 +308,19 @@ ul, ol {
 /* Insight Metrics Strip */
 .stats-strip {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 14px;
-  margin-top: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px;
+  margin-top: 6px;
 }
 
 .stat-card {
   background-color: var(--bg-card);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-md);
-  padding: 14px 18px;
+  padding: 12px 16px;
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 12px;
   box-shadow: var(--shadow-sm);
   transition: transform var(--transition-fast), box-shadow var(--transition-fast);
 }
@@ -331,15 +331,15 @@ ul, ol {
 }
 
 .stat-icon-wrap {
-  width: 42px;
-  height: 42px;
+  width: 38px;
+  height: 38px;
   border-radius: var(--radius-sm);
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: var(--primary-light);
   color: var(--primary);
-  font-size: 1.25rem;
+  font-size: 1.15rem;
   flex-shrink: 0;
 }
 
@@ -349,7 +349,7 @@ ul, ol {
 }
 
 .stat-label {
-  font-size: 0.78rem;
+  font-size: 0.74rem;
   font-weight: 600;
   color: var(--text-muted);
   text-transform: uppercase;
@@ -357,7 +357,7 @@ ul, ol {
 }
 
 .stat-value {
-  font-size: 1.28rem;
+  font-size: 1.18rem;
   font-weight: 800;
   color: var(--text-main);
   font-family: 'Outfit', sans-serif;
@@ -367,20 +367,13 @@ ul, ol {
    Filter & Search Toolbar
    ========================================================================== */
 .toolbar-section {
-  position: sticky;
-  top: var(--header-height);
-  z-index: 90;
-  background-color: rgba(247, 248, 250, 0.92);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  position: relative;
+  z-index: 10;
+  background-color: transparent;
   border-bottom: 1px solid var(--border-color);
-  padding: 16px 0;
-  margin-bottom: 28px;
+  padding: 8px 0 20px 0;
+  margin-bottom: 24px;
   transition: all var(--transition-normal);
-}
-
-[data-theme="dark"] .toolbar-section {
-  background-color: rgba(11, 15, 25, 0.92);
 }
 
 .toolbar-grid {
@@ -676,8 +669,8 @@ ul, ol {
 .map-column {
   width: 45%;
   position: sticky;
-  top: calc(var(--header-height) + 85px);
-  height: calc(100vh - var(--header-height) - 110px);
+  top: calc(var(--header-height) + 16px);
+  height: calc(100vh - var(--header-height) - 32px);
   border-radius: var(--radius-lg);
   overflow: hidden;
   border: 1px solid var(--border-color);
