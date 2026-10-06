@@ -20,9 +20,8 @@ Starting from the classroom Airbnb demo reference, implement an interactive page
 
 The page displays all required property attributes: listing name, formatted description, amenities list, host details (name and photo), price per night, and thumbnail photography, along with original creative additions (interactive map, stay calculator, live filters, wishlist, and dark mode) built with clean, semantic HTML5, CSS3, and modern JavaScript.
 
-## Deployment & Repository
+## Repository
 
-- 🌐 **Live Deployment (GitHub Pages):** [https://harshiacchu.github.io/web_dev/assign2/](https://harshiacchu.github.io/web_dev/assign2/)
 - 💻 **GitHub Repository:** [https://github.com/Harshiacchu/web_dev/tree/main/assign2](https://github.com/Harshiacchu/web_dev/tree/main/assign2)
 
 ## Assignment Checklist
@@ -38,7 +37,7 @@ The page displays all required property attributes: listing name, formatted desc
 | **Price** | Nightly rate parsed for sorting, calculations, and custom map markers | ✅ Complete |
 | **Thumbnail / Picture** | Cover image with graceful fallback handling for expired CDNs | ✅ Complete |
 | **Creative Additions** | Interactive Leaflet Map, Stay Calculator, Filter Drawer, Wishlist, Dark Mode | ✅ Complete |
-| **README & Deployment** | Documented repository linked to live GitHub Pages deployment | ✅ Complete |
+| **README Documentation** | Complete project documentation and local run instructions | ✅ Complete |
 
 ## Features & Creative Additions
 
